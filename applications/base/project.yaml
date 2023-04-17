@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: system
+  namespace: argocd
+spec:
+  description: system project
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: 'argocd'
+      server: 'https://kubernetes.default.svc'
+    - namespace: 'kube-system'
+      server: 'https://kubernetes.default.svc'
+    - namespace: 'argo'
+      server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  roles:
+    - name: dev1
+      description: dev1 role for dev1 project
+      policies:
+        - p, proj:dev1:dev1, applications, get, dev1/*, allow
