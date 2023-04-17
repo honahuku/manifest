@@ -8,6 +8,6 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    path: argocd
+    path: argocd/overlays/production
     repoURL: https://github.com/honahuku/manifest
     targetRevision: master
