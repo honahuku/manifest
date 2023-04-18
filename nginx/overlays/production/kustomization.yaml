@@ -1,3 +1,4 @@
 resources:
   - ../../base
   - service.yaml
+  - ingress.yaml
