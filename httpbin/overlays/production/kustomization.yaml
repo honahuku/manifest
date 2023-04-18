@@ -5,4 +5,4 @@ resources:
 
 commonLabels:
   app: cloudflared-deployment
-nameSuffix: -nginx
+nameSuffix: -httpbin
