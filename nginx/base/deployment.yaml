@@ -17,12 +17,8 @@ spec:
         app: nginx
     spec:
       containers:
-      - command:
-        - nginx
-        - -g
-        - deamon
-        image: nginx:alpine
-        name: nginx
+      - name: nginx
+        image: nginx:latest
         ports:
         - containerPort: 80
         resources: {}
