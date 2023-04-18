@@ -10,28 +10,24 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app.kubernetes.io/name: nginx-service
+      app.kubernetes.io/name: cloudflared
       pod: cloudflared
   strategy: {}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: nginx-service
+        app.kubernetes.io/name: cloudflared
         pod: cloudflared
     spec:
       containers:
-      - command:
-        - cloudflared
-        - tunnel
-        # In a k8s environment, the metrics server needs to listen outside the pod it runs on.
-        # The address 0.0.0.0:2000 allows any pod in the namespace.
-        - --metrics
-        - 0.0.0.0:2000
-        - run
         args:
-        - --token
-        # TODO: tokenをGitHubから読み出す
-        - <token value>
+        - tunnel
+        # Points cloudflared to the config file, which configures what
+        # cloudflared will actually do. This file is created by a ConfigMap
+        # below.
+        - --config
+        - /etc/cloudflared/config/config.yaml
+        - run
         image: cloudflare/cloudflared:latest
         name: cloudflared
         livenessProbe:
@@ -43,4 +39,21 @@ spec:
           failureThreshold: 1
           initialDelaySeconds: 10
           periodSeconds: 10
+        volumeMounts:
+        - name: config
+          mountPath: /etc/cloudflared/config
+          readOnly: true
+        - name: creds
+          mountPath: /etc/cloudflared/creds
+          readOnly: true
+      volumes:
+      - name: creds
+        secret:
+          secretName: tunnel-credentials
+      - name: config
+        configMap:
+          name: cloudflared
+          items:
+          - key: config.yaml
+            path: config.yaml
 status: {}
