@@ -1,0 +1,3 @@
+resources:
+- cloudflared-configmap.yaml
+- cloudflared-deployment.yaml
