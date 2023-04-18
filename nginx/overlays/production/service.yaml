@@ -8,8 +8,6 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/part-of: nginx
     app.kubernetes.io/managed-by: kustomize
-metadata:
-  name: web-service
 spec:
   selector:
     app: httpbin
