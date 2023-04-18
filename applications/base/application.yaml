@@ -11,3 +11,10 @@ spec:
     path: applications
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
+  syncPolicy:
+    automated:
+      # リソース自動削除。trueならmanifestに存在しないリソースは削除される
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

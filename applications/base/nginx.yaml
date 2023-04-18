@@ -11,3 +11,9 @@ spec:
     path: nginx/overlays/production
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
