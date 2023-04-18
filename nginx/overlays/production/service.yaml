@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
 spec:
   selector:
-    app: httpbin
+    app.kubernetes.io/name: nginx-service
   ports:
     - protocol: TCP
       port: 80
