@@ -11,11 +11,11 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: nginx-service
-  strategy: {}
   template:
     metadata:
       labels:
-        app: nginx
+        app.kubernetes.io/name: nginx-service
+  strategy: {}
     spec:
       containers:
       - name: nginx
