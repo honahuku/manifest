@@ -13,7 +13,7 @@ spec:
     matchLabels:
       tunnel: k8s-tunnel
       app.kubernetes.io/name: cloudflared
-      pod: cloudflared
+      app: cloudflared
   strategy: {}
   template:
     metadata:
