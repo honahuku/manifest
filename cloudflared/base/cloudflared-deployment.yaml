@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: cloudflared-deployment
   labels:
+    tunnel: k8s-tunnel
     app: cloudflared
     app.kubernetes.io/component: server
     app.kubernetes.io/version: latest
@@ -10,6 +11,7 @@ spec:
   replicas: 2
   selector:
     matchLabels:
+      tunnel: k8s-tunnel
       app.kubernetes.io/name: cloudflared
       pod: cloudflared
   strategy: {}
@@ -17,7 +19,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: cloudflared
-        pod: cloudflared
+        tunnel: k8s-tunnel
     spec:
       containers:
       - args:
