@@ -12,5 +12,5 @@ data:
     - hostname: k8s-nginx.honahuku.com
       service: http://nginx-service:80
     - hostname: k8s-httpbin.honahuku.com
-      service: http://httpbin-service:80
+      service: http://10.43.1.54:80
     - service: http_status:404
