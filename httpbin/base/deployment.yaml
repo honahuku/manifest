@@ -2,15 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: httpbin-deployment
+  labels:
+    app: httpbin
+    app.kubernetes.io/component: server
+    app.kubernetes.io/version: latest
 spec:
   selector:
     matchLabels:
-      app: httpbin
+      app.kubernetes.io/name: httpbin
   replicas: 2
   template:
     metadata:
       labels:
-        app: httpbin
+        app.kubernetes.io/name: httpbin
     spec:
       containers:
       - name: httpbin
