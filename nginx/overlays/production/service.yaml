@@ -8,12 +8,11 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/part-of: nginx
     app.kubernetes.io/managed-by: kustomize
+metadata:
+  name: web-service
 spec:
-  type: ClusterIP
-  ports:
-  - name: cloudflared
-    port: 80
-    targetPort: 80
   selector:
-    app.kubernetes.io/name: cloudflared
-    pod: cloudflared
+    app: httpbin
+  ports:
+    - protocol: TCP
+      port: 80
