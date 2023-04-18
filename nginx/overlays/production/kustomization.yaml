@@ -1,7 +1,7 @@
 resources:
-  - service.yaml
-  - ../../../cloudflared/base/
   - ../../base
+  - ../../../cloudflared/base/
+  - service.yaml
 
 commonLabels:
   app: cloudflared-deployment
