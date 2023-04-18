@@ -10,4 +10,11 @@ spec:
   source:
     path: argocd/overlays/production
     repoURL: https://github.com/honahuku/manifest
-    targetRevision: master
+    targetRevision: main
+  syncPolicy:
+    automated:
+      # リソース自動削除。trueならmanifestに存在しないリソースは削除される
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

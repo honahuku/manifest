@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - base/application.yaml
 - base/argo-cd.yaml
+- base/nginx.yaml
 - base/project.yaml
 
 namespace: argocd
