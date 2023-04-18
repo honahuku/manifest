@@ -6,17 +6,24 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/version: latest
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
-  replicas: 2
+  strategy: {}
   template:
     metadata:
       labels:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - command:
+        - nginx
+        - -g
+        - deamon
+        image: nginx:alpine
+        name: nginx
         ports:
         - containerPort: 80
+        resources: {}
+status: {}
