@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   labels:
+    app: nginx
     app.kubernetes.io/component: server
     app.kubernetes.io/version: latest
 spec:
