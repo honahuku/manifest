@@ -10,4 +10,4 @@ spec:
   source:
     path: nginx/overlays/production
     repoURL: https://github.com/honahuku/manifest
-    targetRevision: master
+    targetRevision: main

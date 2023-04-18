@@ -10,4 +10,4 @@ spec:
   source:
     path: applications
     repoURL: https://github.com/honahuku/manifest
-    targetRevision: master
+    targetRevision: main
