@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cloudflared
+  name: nginx
 spec:
   project: default
   destination:
-    namespace: cloudflared
+    namespace: nginx
     server: https://kubernetes.default.svc
   source:
-    path: cloudflared/overlays/production
+    path: httpbin/overlays/production
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   syncPolicy:
