@@ -20,7 +20,7 @@ spec:
         pod: cloudflared
     spec:
       containers:
-        args:
+      - args:
         - tunnel
         # Points cloudflared to the config file, which configures what
         # cloudflared will actually do. This file is created by a ConfigMap
