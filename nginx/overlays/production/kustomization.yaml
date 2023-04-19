@@ -1,6 +1,6 @@
 resources:
   - ../../base
-  - ../../../cloudflared/base/
+  # - ../../../cloudflared/base/
   - service.yaml
 
 commonLabels:
