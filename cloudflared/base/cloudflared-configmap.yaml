@@ -9,8 +9,10 @@ data:
     metrics: 0.0.0.0:2000
     no-autoupdate: true
     ingress:
+    - hostname: k8s-tunnel.honahuku.com
+      service: http://10.43.167.235:80
     - hostname: k8s-nginx.honahuku.com
       service: http://nginx-service:80
     - hostname: k8s-httpbin.honahuku.com
-      service: http://10.43.1.54:80
+      service: http://httpbin-service:80
     - service: http_status:404
