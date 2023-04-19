@@ -1,8 +1,8 @@
 resources:
   - service.yaml
   - ../../base
-  - ../../../cloudflared/base/
+#   - ../../../cloudflared/base/
 
-commonLabels:
-  app: cloudflared-deployment
-nameSuffix: -httpbin
+# commonLabels:
+#   app: cloudflared-deployment
+# nameSuffix: -httpbin
