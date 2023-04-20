@@ -8,7 +8,7 @@ spec:
     namespace: cloudflared
     server: https://kubernetes.default.svc
   source:
-    path: cloudflared/overlays/production
+    path: cloudflared
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   syncPolicy:

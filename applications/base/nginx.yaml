@@ -8,7 +8,7 @@ spec:
     namespace: nginx
     server: https://kubernetes.default.svc
   source:
-    path: nginx/overlays/production
+    path: nginx
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   syncPolicy:
