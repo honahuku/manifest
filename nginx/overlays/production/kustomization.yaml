@@ -1,8 +1,2 @@
 resources:
   - ../../base
-  # - ../../../cloudflared/base/
-  - service.yaml
-
-commonLabels:
-  app: cloudflared-deployment
-nameSuffix: -nginx
