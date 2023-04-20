@@ -42,6 +42,9 @@ spec:
         - name: creds
           mountPath: /etc/cloudflared/creds
           readOnly: true
+        - name: httpbin-creds
+          mountPath: /etc/cloudflared/httpbin-creds
+          readOnly: true
       volumes:
       - name: httpbin-creds
         secret:
