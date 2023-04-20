@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudflared
+spec:
+  project: default
+  destination:
+    namespace: cloudflared
+    server: https://kubernetes.default.svc
+  source:
+    path: cloudflared/overlays/production
+    repoURL: https://github.com/honahuku/manifest
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

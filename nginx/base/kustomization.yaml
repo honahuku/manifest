@@ -5,5 +5,3 @@ namespace: nginx
 resources:
 - namespace.yaml
 - deployment.yaml
-- cloudflared-configmap.yaml
-- cloudflared-deployment.yaml
