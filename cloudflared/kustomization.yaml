@@ -6,3 +6,4 @@ resources:
 - base/namespace.yaml
 - base/deployment.yaml
 - base/configmap.yaml
+- base/httpbin-configmap.yaml

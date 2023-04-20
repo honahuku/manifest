@@ -43,6 +43,9 @@ spec:
           mountPath: /etc/cloudflared/creds
           readOnly: true
       volumes:
+      - name: httpbin-creds
+        secret:
+          secretName: httpbin-tunnel-credentials
       - name: creds
         secret:
           # By default, the credentials file will be created under ~/.cloudflared/<tunnel ID>.json
