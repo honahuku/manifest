@@ -8,7 +8,7 @@ spec:
     namespace: httpbin
     server: https://kubernetes.default.svc
   source:
-    path: httpbin/overlays/production
+    path: httpbin
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   syncPolicy:
