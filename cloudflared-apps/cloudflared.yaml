@@ -7,7 +7,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/honahuku/manifest
-        revision: main
+        revision: add/cloudflare-tunnel
         directories:
           - path: cloudflared/overlays*
   template:
@@ -18,7 +18,7 @@ spec:
       project: system
       source:
         repoURL: https://github.com/honahuku/manifest
-        targetRevision: main
+        targetRevision: add/cloudflare-tunnel
         path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
