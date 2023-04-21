@@ -3,36 +3,9 @@ kind: Deployment
 metadata:
   name: cloudflared
 spec:
-  selector:
-    matchLabels:
-      app: cloudflared
   template:
     spec:
-      containers:
-      - name: cloudflared
-        args:
-        - tunnel
-        # Points cloudflared to the config file, which configures what
-        # cloudflared will actually do. This file is created by a ConfigMap
-        # below.
-        - --config
-        - /etc/cloudflared/nginx/config/config.yaml
-        - run
-        volumeMounts:
-        - name: nginx-config
-          mountPath: /etc/cloudflared/nginx/config
-          readOnly: true
-        - name: nginx-creds
-          mountPath: /etc/cloudflared/nginx/creds
-          readOnly: true
       volumes:
-      - name: nginx-creds
+      - name: creds
         secret:
-          secretName: nginx-tunnel-credentials
-      # Create a config.yaml file from the ConfigMap below.
-      - name: nginx-config
-        configMap:
-          name: nginx-cloudflared
-          items:
-          - key: config.yaml
-            path: config.yaml
+          secretName: httpbin-tunnel-credentials
