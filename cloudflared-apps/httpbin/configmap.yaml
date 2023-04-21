@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cfd-configmap
+  name: cloudflared
 data:
   config.yaml: |
     tunnel: httpbin
