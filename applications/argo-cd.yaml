@@ -1,18 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
+namespace: argocd
 metadata:
-  name: httpbin
+  name: argo-cd
 spec:
-  project: default
+  project: system
   destination:
-    namespace: httpbin
+    namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    path: httpbin
+    path: argocd/overlays/production
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   syncPolicy:
     automated:
+      # リソース自動削除。trueならmanifestに存在しないリソースは削除される
       prune: true
       selfHeal: true
     syncOptions:
