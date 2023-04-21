@@ -1,8 +1,12 @@
 resources:
   - ../../template/cloudflared
-  - configmap.yaml
 
 patches:
   - path: deployment.yaml
+
+configMapGenerator:
+  - name: cloudflared
+    files:
+    - config.yaml
 
 namePrefix: nginx-
