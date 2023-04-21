@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cloudflared-apps
+  namespace: cloudflared
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/honahuku/manifest
+        revision: add/cloudflare-tunnel
+        directories:
+          - path: cloudflared/overlays/*
+  template:
+    metadata:
+      name: "cloudflared-apps-{{path.basenameNormalized}}"
+      namespace: cloudflared
+    spec:
+      project: cloudflared-apps
+      source:
+        repoURL: https://github.com/honahuku/manifest
+        targetRevision: add/cloudflare-tunnel
+        path: "{{path}}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "cloudflared"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: true
+        syncOptions:
+          - CreateNamespace=true
+        # retry:
+        #   limit: -1
+        #   backoff:
+        #     duration: 5s
+        #     factor: 2
+        #     maxDuration: 2m
