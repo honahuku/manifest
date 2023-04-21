@@ -15,7 +15,7 @@ spec:
       name: "cloudflared-apps-{{path.basenameNormalized}}"
       namespace: cloudflared
     spec:
-      project: system
+      project: cloudflared-apps
       source:
         repoURL: https://github.com/honahuku/manifest
         targetRevision: add/cloudflare-tunnel

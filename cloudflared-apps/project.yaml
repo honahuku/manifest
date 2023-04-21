@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cloudflared-apps
+  namespace: cloudflared
+spec:
+  description: cloudflaredでデプロイするmanifestをまとめたところ
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: 'cloudflared'
+      server: 'https://kubernetes.default.svc'
+    - namespace: "argocd"
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'

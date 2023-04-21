@@ -3,5 +3,7 @@ kind: Kustomization
 
 resources:
 - cloudflared.yaml
+- namespace.yaml
+- project.yaml
 
 namespace: argocd

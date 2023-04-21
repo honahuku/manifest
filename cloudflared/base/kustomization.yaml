@@ -3,5 +3,4 @@ kind: Kustomization
 namespace: cloudflared
 
 resources:
-- namespace.yaml
 - deployment.yaml
