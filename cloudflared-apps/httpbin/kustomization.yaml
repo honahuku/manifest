@@ -1,5 +1,5 @@
 resources:
-  - ../../base
+  - template/cloudflared
   - configmap.yaml
 
 patches:
