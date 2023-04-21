@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cloudflared
+  name: cfd-deployment
 spec:
-  selector:
-    matchLabels:
-      app: httpbin-cloudflared
+  # selector:
+  #   matchLabels:
+  #     app: httpbin-cloudflared
   template:
     spec:
       containers:
