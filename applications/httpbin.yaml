@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-namespace: argocd
 metadata:
   name: httpbin
+  namespace: argocd
 spec:
   project: default
   destination:
