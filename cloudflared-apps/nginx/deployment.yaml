@@ -8,4 +8,4 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: httpbin-tunnel-credentials
+          secretName: nginx-tunnel-credentials
