@@ -10,4 +10,4 @@ spec:
   source:
     path: cloudflared-apps
     repoURL: https://github.com/honahuku/manifest
-    targetRevision: add/cloudflare-tunnel
+    targetRevision: main
