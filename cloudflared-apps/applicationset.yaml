@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       name: "cloudflared-apps-{{path.basenameNormalized}}"
-      namespace: cloudflared
+      namespace: argocd
     spec:
       project: cloudflared-apps
       source:
