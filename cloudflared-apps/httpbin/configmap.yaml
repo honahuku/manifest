@@ -4,11 +4,11 @@ metadata:
   name: cloudflared
 data:
   config.yaml: |
-    tunnel: k8s-httpbin
+    tunnel: httpbin
     credentials-file: /etc/cloudflared/creds/credentials.json
     metrics: 0.0.0.0:2000
     no-autoupdate: true
     ingress:
-    - hostname: k8s-httpbin.honahuku.com
+    - hostname: httpbin.honahuku.com
       service: http://httpbin-service.httpbin:80
     - service: http_status:404
