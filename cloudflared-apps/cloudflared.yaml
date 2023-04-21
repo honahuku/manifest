@@ -9,7 +9,7 @@ spec:
         repoURL: https://github.com/honahuku/manifest
         revision: add/cloudflare-tunnel
         directories:
-          - path: cloudflared/overlays*
+          - path: cloudflared/overlays/*
   template:
     metadata:
       name: "cloudflared-apps-{{path.basenameNormalized}}"
