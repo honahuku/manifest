@@ -4,6 +4,7 @@ metadata:
   name: cloudflared-apps
   namespace: cloudflared
 spec:
+  project: system
   generators:
     - git:
         repoURL: https://github.com/honahuku/manifest
