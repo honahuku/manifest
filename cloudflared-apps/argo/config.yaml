@@ -1,0 +1,8 @@
+tunnel: argocd
+credentials-file: /etc/cloudflared/creds/credentials.json
+metrics: 0.0.0.0:2000
+no-autoupdate: true
+ingress:
+- hostname: argocd.honahuku.com
+  service: http://argocd-server.argocd:80
+- service: http_status:404
