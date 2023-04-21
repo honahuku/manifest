@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: cloudflared
 spec:
+  selector:
+    matchLabels:
+      app: nginx-cloudflared
   template:
     spec:
       containers:

@@ -3,9 +3,6 @@ kind: Deployment
 metadata:
   name: cloudflared
 spec:
-  selector:
-    matchLabels:
-      app: cloudflared
   replicas: 2 # You could also consider elastic scaling for this deployment
   template:
     metadata:

@@ -4,3 +4,5 @@ resources:
 
 patches:
   - path: deployment.yaml
+
+namePrefix: httpbin-
