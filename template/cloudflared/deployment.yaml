@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cfd-deployment
+  name: cloudflared
 spec:
   replicas: 2 # You could also consider elastic scaling for this deployment
   template:

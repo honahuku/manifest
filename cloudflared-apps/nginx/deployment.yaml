@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: nginx-cloudflared
+      app: cloudflared
   template:
     spec:
       containers:
