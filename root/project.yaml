@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: cloudflared-apps
-  namespace: cloudflared
+  namespace: argocd
 spec:
   description: cloudflaredでデプロイするmanifestをまとめたところ
   sourceRepos:
