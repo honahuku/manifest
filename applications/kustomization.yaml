@@ -6,6 +6,7 @@ resources:
 - base/argo-cd.yaml
 - base/httpbin.yaml
 - base/nginx.yaml
-- base/project.yaml
+- base/namespaces/*
+- base/projects/*
 
 namespace: argocd

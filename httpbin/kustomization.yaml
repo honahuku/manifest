@@ -4,5 +4,4 @@ namespace: httpbin
 
 resources:
 - base/deployment.yaml
-- base/namespace.yaml
 - base/service.yaml
