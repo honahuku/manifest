@@ -4,7 +4,7 @@ metadata:
   name: httpbin-service
 spec:
   selector:
-    app: httpbin
+      app.kubernetes.io/name: httpbin-service
   ports:
     - protocol: TCP
       port: 80
