@@ -5,5 +5,6 @@ resources:
 - cloudflared.yaml
 - namespace.yaml
 - project.yaml
+- application.yaml
 
 namespace: argocd
