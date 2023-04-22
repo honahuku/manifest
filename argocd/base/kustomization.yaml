@@ -4,5 +4,14 @@ kind: Kustomization
 namespace: argocd
 resources:
 - https://github.com/argoproj/argo-cd/manifests/ha/cluster-install?ref=v2.6.7
-- argocd-cmd-params-cm.yaml
-- argocd-server-service.yaml
+
+patches:
+  - path: argocd-cmd-params-cm.yaml
+  - target:
+      kind: Service
+      name: argocd-server
+    patch: |-
+      - op: remove
+        path: /spec/ports/0/targetPort
+      - op: remove
+        path: /spec/ports/1/targetPort
