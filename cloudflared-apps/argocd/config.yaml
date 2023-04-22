@@ -4,5 +4,5 @@ metrics: 0.0.0.0:2000
 no-autoupdate: true
 ingress:
 - hostname: argocd.honahuku.com
-  service: https://argocd-server.argocd:8080
+  service: https://argocd-server.argocd:443
 - service: http_status:404
