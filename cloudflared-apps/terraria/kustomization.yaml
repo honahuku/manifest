@@ -1,0 +1,12 @@
+resources:
+  - ../../template/cloudflared
+
+patches:
+  - path: deployment.yaml
+
+configMapGenerator:
+  - name: cloudflared
+    files:
+    - config.yaml
+
+namePrefix: terraria-

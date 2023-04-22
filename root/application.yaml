@@ -97,3 +97,24 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: terraria
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: terraria
+    server: https://kubernetes.default.svc
+  source:
+    path: terraria/base
+    repoURL: https://github.com/honahuku/manifest
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
