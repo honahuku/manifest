@@ -85,7 +85,7 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: argocd
+    namespace: argowf
     server: https://kubernetes.default.svc
   source:
     path: argowf/base
