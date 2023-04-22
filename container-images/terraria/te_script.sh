@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 USERNAME='root'
 
 # screen名
