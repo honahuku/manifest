@@ -4,7 +4,7 @@ metrics: 0.0.0.0:2000
 no-autoupdate: true
 ingress:
 - hostname: argowf.honahuku.com
-  service: https://argo-server.argowf:443
+  service: https://argo-server.argowf:2746
   originRequest:
     noTLSVerify: true
 - service: http_status:404
