@@ -88,7 +88,7 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    path: argowf
+    path: argowf/base
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   syncPolicy:
