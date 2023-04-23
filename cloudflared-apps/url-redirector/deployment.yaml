@@ -8,4 +8,4 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: nginx-tunnel-credentials
+          secretName: url-redirector-tunnel-credentials

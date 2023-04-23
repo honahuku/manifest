@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
-  namespace: nginx
+  name: url-redirector-svc
+  namespace: url-redirector
   labels:
-    app.kubernetes.io/name: nginx-service
+    app.kubernetes.io/name: url-redirector-svc
     app.kubernetes.io/component: server
-    app.kubernetes.io/part-of: nginx
+    app.kubernetes.io/part-of: argocd
     app.kubernetes.io/managed-by: kustomize
 spec:
   selector:
-    app.kubernetes.io/name: nginx-service
+    app.kubernetes.io/name: url-redirector-svc
   ports:
     - protocol: TCP
       port: 80
