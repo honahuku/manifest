@@ -22,5 +22,16 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-        resources: {}
+        volumeMounts:
+        - name: conf
+          mountPath: /etc/nginx/conf.d/
+          readOnly: true
+      volumes:
+      # nginx.confからconfigmapを生成する
+      - name: config
+        configMap:
+          name: url-redirector
+          items:
+          - key: config.yaml
+            path: config.yaml
 status: {}

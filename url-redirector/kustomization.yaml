@@ -5,3 +5,8 @@ namespace: url-redirector
 resources:
 - base/deployment.yaml
 - base/service.yaml
+
+configMapGenerator:
+  - name: url-redirector
+    files:
+    - nginx.yaml
