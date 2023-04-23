@@ -32,6 +32,6 @@ spec:
         configMap:
           name: url-redirector
           items:
-          - key: config.yaml
-            path: config.yaml
+          - key: nginx.conf
+            path: nginx.conf
 status: {}
