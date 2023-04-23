@@ -9,4 +9,4 @@ resources:
 configMapGenerator:
   - name: url-redirector
     files:
-    - nginx.yaml
+    - nginx.conf
