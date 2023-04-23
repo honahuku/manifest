@@ -109,7 +109,7 @@ spec:
     namespace: terraria
     server: https://kubernetes.default.svc
   source:
-    path: terraria/base
+    path: terraria
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   syncPolicy:
@@ -118,3 +118,39 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: longhorn
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: longhorn
+    repoURL: https://charts.longhorn.io
+    targetRevision: 1.3.3
+    helm:
+      releaseName: v1-longhorn
+      # values: |
+      #   mode: standalone
+      #   replicas: 1
+      #   persistence:
+      #     size: 5Gi
+      #   DeploymentUpdate:
+      #     type: Recreate
+      #   resources:
+      #     requests:
+      #       memory: 1Gi
+      #   metrics:
+      #     serviceMonitor:
+      #       enabled: true
+      #       additionalLabels:
+      #         release: prometheus
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: longhorn
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
