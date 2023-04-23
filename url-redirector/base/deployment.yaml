@@ -23,7 +23,7 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: conf
+        - name: config
           mountPath: /etc/nginx/conf.d/
           readOnly: true
       volumes:
