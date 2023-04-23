@@ -7,4 +7,6 @@ ingress:
 # https://github.com/honahuku/manifest/issues/17 が解決したらやる
 - hostname: script.honahuku.com
   service: http://url-redirector-svc.url-redirector:80
+- hostname: git.honahuku.com
+  service: http://url-redirector-svc.url-redirector:80
 - service: http_status:404
