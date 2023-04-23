@@ -9,7 +9,7 @@ RUN unzip terraria-server.zip && \
     mkdir terraria && \
     mv ${IMAGE_TAG}/Linux/* terraria/ && \
     chmod +x terraria/TerrariaServer
-COPY container-images/terraria/te_script.sh terraria/
+COPY container-images/terraria/tctl terraria/
 
 # 実行用ファイルを保存するステージ
 FROM alpine
