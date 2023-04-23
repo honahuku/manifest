@@ -9,4 +9,6 @@ ingress:
   service: http://url-redirector-svc.url-redirector:80
 - hostname: git.honahuku.com
   service: http://url-redirector-svc.url-redirector:80
+- hostname: git-raw.honahuku.com
+  service: http://url-redirector-svc.url-redirector:80
 - service: http_status:404

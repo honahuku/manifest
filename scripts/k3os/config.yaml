@@ -1,0 +1,11 @@
+# このファイルはk3osのcloud-initのために用意されています
+ssh_authorized_keys:
+- github:honahuku
+hostname: k3os-server
+boot_cmd:
+  - "ln -sv /usr/share/zoneinfo/Asia/Tokyo /etc/localtime"
+package_upgrade: true
+
+k3os:
+  ntp_servers:
+    - ntp.nict.jp
