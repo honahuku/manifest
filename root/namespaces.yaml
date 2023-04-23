@@ -16,7 +16,7 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: nginx
+  name: url-redirector
 ---
 apiVersion: v1
 kind: Namespace

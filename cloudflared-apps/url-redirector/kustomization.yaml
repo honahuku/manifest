@@ -9,4 +9,4 @@ configMapGenerator:
     files:
     - config.yaml
 
-namePrefix: nginx-
+namePrefix: url-redirector-

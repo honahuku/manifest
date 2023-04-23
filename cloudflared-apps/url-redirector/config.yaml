@@ -1,0 +1,10 @@
+tunnel: url-redirector
+credentials-file: /etc/cloudflared/creds/credentials.json
+metrics: 0.0.0.0:2000
+no-autoupdate: true
+ingress:
+# 本当はscript.honah.ukを使いたいけどcloudflaredの認証情報が切り替えられないのでhonahuku.comを使う
+# https://github.com/honahuku/manifest/issues/17 が解決したらやる
+- hostname: script.honahuku.com
+  service: http://url-redirector-svc.url-redirector:80
+- service: http_status:404
