@@ -150,7 +150,7 @@ spec:
   source:
     chart: kubeshark
     repoURL: https://helm.kubeshark.co
-    targetRevision: 40.0
+    targetRevision: latest
     helm:
       releaseName: kubeshark
   destination:
