@@ -130,9 +130,10 @@ spec:
   project: default
   source:
     helm:
-      chart: longhorn/longhorn
       repoURL: https://charts.longhorn.io
+      chart: longhorn
       version: 1.4.1
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
