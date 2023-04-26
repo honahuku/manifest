@@ -10,3 +10,6 @@ helmCharts:
   releaseName: kubeshark
   version: "40.0"
   repo: https://helm.kubeshark.co
+
+patches:
+  - path: base/kubeshark-pvc.yaml
