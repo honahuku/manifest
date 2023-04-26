@@ -139,3 +139,24 @@ spec:
     automated:
       prune: true
       selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubeshark
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: kubeshark
+    repoURL: https://helm.kubeshark.co
+    targetRevision: 1.4.1
+    helm:
+      releaseName: kubeshark
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kubeshark
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
