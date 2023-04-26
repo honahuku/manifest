@@ -148,15 +148,15 @@ metadata:
 spec:
   project: default
   source:
-    chart: kubeshark
-    repoURL: https://helm.kubeshark.co
-    targetRevision: "40.0"
-    helm:
-      releaseName: kubeshark
+    path: kubeshark
+    repoURL: https://github.com/honahuku/manifest
+    targetRevision: main
   destination:
-    server: "https://kubernetes.default.svc"
     namespace: kubeshark
+    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
