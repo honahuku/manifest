@@ -118,3 +118,22 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: longhorn
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      chart: longhorn/longhorn
+      repoURL: https://charts.longhorn.io
+      version: 1.4.1
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
