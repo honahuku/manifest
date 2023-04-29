@@ -9,7 +9,7 @@ helmCharts:
     namespaces: external-secrets
   releaseName: external-secrets
   version: "0.8.1"
-  repo: https://helm.kubeshark.co
+  repo: https://charts.external-secrets.io
 
 patches:
   - path: secretstore.yaml
