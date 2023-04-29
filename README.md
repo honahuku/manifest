@@ -1,5 +1,5 @@
 # manifest
-This repository contains Kubernetes manifest files and Docker configuration files.
+This repository contains manifest files and config files for each application that will be deployed to Honahuku's home k8s cluster.
 
 ## Overview
 ### Kubernetes Manifest Files
