@@ -8,5 +8,5 @@ helmCharts:
   version: 0.8.1
   repo: https://charts.external-secrets.io
 
-resources:
-- secretstore.yaml
+# resources:
+# - secretstore.yaml
