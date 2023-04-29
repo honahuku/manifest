@@ -4,3 +4,5 @@ namespace: config
 
 resources:
 - secretstore.yaml
+- externalsecret/cf-argocd.yaml
+- externalsecret/cf-argowf.yaml
