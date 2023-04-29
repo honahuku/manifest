@@ -184,17 +184,18 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config
+  name: external-secrets
   namespace: argocd
 spec:
   project: default
-  destination:
-    namespace: default
-    server: https://kubernetes.default.svc
   source:
-    path: config
-    repoURL: https://github.com/honahuku/manifest
-    targetRevision: main
+    chart: external-secrets
+    repoURL: https://charts.external-secrets.io
+    targetRevision: 0.8.1
+    helm:
+      releaseName: external-secrets
+  destination:
+    server: "https://kubernetes.default.svc"
   syncPolicy:
     automated:
       prune: true

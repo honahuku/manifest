@@ -5,8 +5,10 @@
         "argocd",
         "argowf",
         "cloudflared",
+        "externalsecret",
         "httpbin",
         "kubeshark",
-        "redirector"
+        "redirector",
+        "secretstore"
     ]
 }
