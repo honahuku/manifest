@@ -5,8 +5,6 @@ namespace: default
 helmCharts:
 - name: external-secrets
   includeCRDs: true
-  valuesInline:
-    namespaces: external-secrets
   releaseName: external-secrets
   version: 0.8.1
   repo: https://charts.external-secrets.io
