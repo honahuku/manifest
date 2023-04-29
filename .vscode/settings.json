@@ -1,11 +1,12 @@
 {
     "cSpell.words": [
         "akeyless",
+        "akeylesscreds",
         "argocd",
         "argowf",
         "cloudflared",
         "httpbin",
         "kubeshark",
-        "redirector",
+        "redirector"
     ]
 }
