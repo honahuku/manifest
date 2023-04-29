@@ -1,7 +1,7 @@
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: akeyless-external-secret-example
+  name: cf-argocd
 spec:
   refreshInterval: 1h
 
@@ -14,6 +14,6 @@ spec:
     creationPolicy: Owner
 
   data:
-    - secretKey: secretKey # Key given to the secret to be created on the cluster
+    - secretKey: cf-argocd # Key given to the secret to be created on the cluster
       remoteRef:
-        key: /home/honahuku/git/manifest/secret/akeylesscreds.yaml # Full path of the secret on Akeyless
+        key: /home/honahuku/git/manifest/secret/data/cf-argocd.yaml # Full path of the secret on Akeyless
