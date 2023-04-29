@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: config
 
 resources:
-- secretstore.yaml
+- akeyless-secret-store.yaml
 - externalsecret/cf-argocd.yaml
 - externalsecret/cf-argowf.yaml
