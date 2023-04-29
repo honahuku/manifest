@@ -1,6 +1,5 @@
 # Cloudflared
+This directory contains the manifest files for applications deployed with Cloudflared.
 
-This directory contains the manifest files for applications deployed with [Cloudflared](https://github.com/cloudflare/cloudflared).
-
-- The manifest files for Cloudflared itself can be found in the [template/cloudflared directory](https://github.com/honahuku/manifest/tree/main/template/cloudflared).
-- The domain and configuration settings for each individual application are located in this directory.
+- The configuration for each application is generated using an ApplicationSet, which is a template for creating applications.
+- The templates for applications created by the ApplicationSet can be found in the [template/cloudflared](https://github.com/honahuku/manifest/tree/main/template/cloudflared) directory.
