@@ -16,4 +16,4 @@ spec:
   data:
     - secretKey: cf-argocd # Key given to the secret to be created on the cluster
       remoteRef:
-        key: /home/honahuku/git/manifest/secret/data/cf-argocd.yaml # Full path of the secret on Akeyless
+        key: /home/honahuku/git/manifest/secret/cf-argocd.yaml # Full path of the secret on Akeyless

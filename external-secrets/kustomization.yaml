@@ -8,7 +8,7 @@ helmCharts:
   valuesInline:
     namespaces: external-secrets
   releaseName: external-secrets
-  version: "0.8.1"
+  version: "0.7.2"
   repo: https://charts.external-secrets.io
 
 resources:
