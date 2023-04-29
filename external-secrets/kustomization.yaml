@@ -3,10 +3,11 @@ kind: Kustomization
 
 helmCharts:
 - name: external-secrets
-  includeCRDs: true
+  includeCRDs: false
   releaseName: external-secrets
   version: 0.8.1
   repo: https://charts.external-secrets.io
 
 resources:
+- external-secrets.io_secretstores.yaml
 - secretstore.yaml
