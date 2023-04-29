@@ -11,5 +11,5 @@ helmCharts:
   version: "0.8.1"
   repo: https://helm.kubeshark.co
 
-# patches:
-#   - path: base/hoge.yaml
+patches:
+  - path: secretstore.yaml
