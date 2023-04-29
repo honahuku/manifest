@@ -14,3 +14,9 @@ When applying the ExternalSecret located in the [externalsecret](https://github.
 ```bash
 kubectl apply -f config/externalsecret/cf-argowf.yaml -n config
 ```
+
+## akeyless-gwのデプロイ
+```bash
+helm repo add akeyless https://akeylesslabs.github.io/helm-charts
+helm repo update
+helm install gw akeyless/akeyless-api-gateway -f secret/akeyless-value.yaml
