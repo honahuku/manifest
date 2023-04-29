@@ -19,4 +19,4 @@ kubectl apply -f config/externalsecret/cf-argowf.yaml -n config
 ```bash
 helm repo add akeyless https://akeylesslabs.github.io/helm-charts
 helm repo update
-helm install gw akeyless/akeyless-api-gateway -f secret/akeyless-value.yaml
+helm install gw akeyless/akeyless-api-gateway -f secret/akeyless-value.yaml --namespace akeyless
