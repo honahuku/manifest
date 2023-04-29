@@ -169,11 +169,13 @@ metadata:
 spec:
   project: default
   source:
-    path: external-secrets
-    repoURL: https://github.com/honahuku/manifest
-    targetRevision: main
+    chart: external-secrets
+    repoURL: https://charts.external-secrets.io
+    targetRevision: 0.8.1
+    helm:
+      releaseName: external-secrets
   destination:
-    server: https://kubernetes.default.svc
+    server: "https://kubernetes.default.svc"
   syncPolicy:
     automated:
       prune: true
