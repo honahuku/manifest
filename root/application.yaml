@@ -173,7 +173,7 @@ spec:
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   destination:
-    namespace: external-secrets
+    namespace: default
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
