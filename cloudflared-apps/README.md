@@ -1,5 +1,5 @@
-# cloudflared
+# Cloudflared
+This directory contains the manifest files for applications deployed with Cloudflared.
 
-オンプレミスのk8sにデプロイされたapplicationのserviceをcloudflaredで公開するためのマニフェストです。  
-cloudflaredの基本設定が`base/`に、各application用のマニフェストが`overlays/`にあります。  
-これらのデプロイは[applications/base/cloudflared.yaml](https://github.com/honahuku/manifest/blob/main/cloudflared-apps/applicationset.yaml)にて管理されています。  
+- The configuration for each application is generated using an ApplicationSet, which is a template for creating applications.
+- The templates for applications created by the ApplicationSet can be found in the [template/cloudflared](https://github.com/honahuku/manifest/tree/main/template/cloudflared) directory.
