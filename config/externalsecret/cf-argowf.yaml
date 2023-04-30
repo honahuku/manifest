@@ -2,7 +2,6 @@ apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
   name: cf-argowf
-  namespace: cloudflared
 spec:
   refreshInterval: 1h
 
