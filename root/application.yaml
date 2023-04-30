@@ -210,7 +210,7 @@ metadata:
 spec:
   project: default
   source:
-    path: config
+    path: akeyless-gw
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   destination:
