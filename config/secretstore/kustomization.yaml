@@ -1,4 +1,2 @@
-namespace: config
-
 resources:
   - akeyless-secret-store.yaml
