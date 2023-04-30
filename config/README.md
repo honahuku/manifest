@@ -17,6 +17,6 @@ kubectl apply -f config/externalsecret/cf-argowf.yaml -n config
 
 ## akeyless-gwのデプロイ
 ```bash
-helm repo add akeyless https://akeylesslabs.github.io/helm-charts
-helm repo update
-helm install gw akeyless/akeyless-api-gateway -f secret/akeyless-value.yaml --namespace akeyless
+kubectl create secret generic akeyless-values --from-file=secret/values.yaml --namespace argocd
+```
+この後にroot/application.yamlを読み込む

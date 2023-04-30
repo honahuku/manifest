@@ -201,3 +201,33 @@ spec:
   syncPolicy:
     automated:
       prune: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: akeyless-gw
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: akeyless
+    repoURL: https://akeylesslabs.github.io/helm-charts
+    targetRevision: 1.26.4
+    helm:
+      releaseName: akeyless/akeyless-api-gateway
+      parameters:
+        - name: values.yaml
+          forceString: true
+          valueFrom:
+            secretKeyRef:
+              name: akeyless-values
+              key: values.yaml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: external-secrets
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
