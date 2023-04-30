@@ -1,4 +1,0 @@
-akeylessUserAuth:
-  # adminAccessId is required field, supported types: access_key,password or cloud identity(aws_iam/azure_ad/gcp_gce)
-  adminAccessId: p-xxxxxxxxxxxx
-  adminAccessKey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

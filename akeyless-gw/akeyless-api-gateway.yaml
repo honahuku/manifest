@@ -14,10 +14,10 @@ spec:
         - name: ADMIN_ACCESS_ID
           valueFrom:
             secretKeyRef:
-              name: akeyless-values
+              name: akeyless-api-gateway-credentials
               key: adminAccessId
         - name: ADMIN_ACCESS_KEY
           valueFrom:
             secretKeyRef:
-              name: akeyless-values
+              name: akeyless-api-gateway-credentials
               key: adminAccessKey

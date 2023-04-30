@@ -17,6 +17,5 @@ kubectl apply -f config/externalsecret/cf-argowf.yaml -n config
 
 ## akeyless-gwのデプロイ
 ```bash
-kubectl create secret generic akeyless-values --from-file=secret/values.yaml --namespace akeyless
+kubectl apply -f secret/akeyless-api-gateway-credentials.yaml -n akeyless
 ```
-この後にroot/application.yamlを読み込む
