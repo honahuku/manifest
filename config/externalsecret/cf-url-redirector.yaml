@@ -2,6 +2,7 @@ apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
   name: cf-url-redirector
+  namespace: cloudflared
 spec:
   refreshInterval: 1h
 
