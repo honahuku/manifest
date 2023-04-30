@@ -6,4 +6,17 @@ metadata:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
 data:
-    kustomize.buildOptions: --load-restrictor LoadRestrictionsNone --enable-helm
+  kustomize.buildOptions: --load-restrictor LoadRestrictionsNone --enable-helm
+  configManagementPlugins: |
+    - name: custom-helm
+      init:
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            kubectl get secret akeyless-values -n akeyless-gw -o jsonpath='{.data.values}' | base64 --decode > /custom-tools/akeyless-values.yaml
+            helm repo add akeyless https://akeylesslabs.github.io/helm-charts
+            helm repo update
+            helm pull akeyless/akeyless-api-gateway --version 1.26.4 --untar --untardir /custom-tools/
+      generate:
+        command: ["/usr/local/bin/helm"]
+        args: ["template", "gw", "/custom-tools/akeyless-api-gateway", "-f", "/custom-tools/akeyless-values.yaml"]

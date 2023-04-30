@@ -210,17 +210,11 @@ metadata:
 spec:
   project: default
   source:
-    chart: akeyless
     repoURL: https://akeylesslabs.github.io/helm-charts
     targetRevision: 1.26.4
-    helm:
-      releaseName: akeyless/akeyless-api-gateway
-      valueFiles:
-        - values.yaml
-      valuesFrom:
-        - secretKeyRef:
-            name: akeyless-values
-            key: values.yaml
+    path: akeyless-gw
+    plugin:
+      name: custom-helm
   destination:
     server: "https://kubernetes.default.svc"
     namespace: external-secrets
