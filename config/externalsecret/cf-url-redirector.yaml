@@ -6,9 +6,8 @@ spec:
   refreshInterval: 1h
 
   secretStoreRef:
-    kind: SecretStore
+    kind: ClusterSecretStore
     name: akeyless-secret-store # Must match SecretStore on the cluster
-    namespace: config
 
   target:
     name: akeyless-cf-url-redirector # Name for the secret to be created on the cluster
