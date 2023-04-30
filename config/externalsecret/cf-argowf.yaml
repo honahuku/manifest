@@ -5,7 +5,7 @@ metadata:
 spec:
   refreshInterval: 1h
 
-  ClusterSecretStoreRef:
+  SecretStoreRef:
     kind: ClusterSecretStore
     name: akeyless-secret-store # Must match SecretStore on the cluster
 
