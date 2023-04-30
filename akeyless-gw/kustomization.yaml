@@ -8,3 +8,6 @@ helmCharts:
   releaseName: akeyless-api-gateway
   version: 1.26.4
   repo: https://akeylesslabs.github.io/helm-charts
+
+patches:
+  - path: akeyless-api-gateway.yaml

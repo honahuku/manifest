@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akeyless-api-gateway
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: akeyless-api-gateway
+  template:
+    spec:
+      containers:
+      - name: api-gateway
+        env:
+        - name: ADMIN_ACCESS_ID
+          valueFrom:
+            secretKeyRef:
+              name: akeyless-values
+              key: adminAccessId
+        - name: ADMIN_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: akeyless-values
+              key: adminAccessKey
