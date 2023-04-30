@@ -210,20 +210,12 @@ metadata:
 spec:
   project: default
   source:
-    chart: akeyless
-    repoURL: https://akeylesslabs.github.io/helm-charts
-    targetRevision: 1.26.4
-    helm:
-      releaseName: akeyless/akeyless-api-gateway
-      valueFiles:
-        - values.yaml
-      valuesFrom:
-        - secretKeyRef:
-            name: akeyless-values
-            key: values.yaml
+    path: config
+    repoURL: https://github.com/honahuku/manifest
+    targetRevision: main
   destination:
-    server: "https://kubernetes.default.svc"
-    namespace: external-secrets
+    namespace: akeyless
+    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       prune: true
