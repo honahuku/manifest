@@ -5,6 +5,8 @@
         "argoproj",
         "argowf",
         "cloudflared",
-        "kubeshark"
+        "externalsecret",
+        "kubeshark",
+        "redirector"
     ]
 }

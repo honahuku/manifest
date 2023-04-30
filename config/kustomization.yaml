@@ -4,3 +4,6 @@ namespace: config
 
 resources:
 - akeyless-secret-store.yaml
+- externalsecret/cf-argocd.yaml
+- externalsecret/cf-argowf.yaml
+- externalsecret/cf-url-redirector.yaml

@@ -16,4 +16,4 @@ spec:
   data:
     - secretKey: cf-argowf # Key given to the secret to be created on the cluster
       remoteRef:
-        key: /home/honahuku/git/manifest/secret/cf-argowf.yaml # Full path of the secret on Akeyless
+        key: /cf-creds/cf-argowf # Full path of the secret on Akeyless
