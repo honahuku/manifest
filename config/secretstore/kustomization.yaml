@@ -1,2 +1,4 @@
+namespace: default
+
 resources:
   - akeyless-secret-store.yaml
