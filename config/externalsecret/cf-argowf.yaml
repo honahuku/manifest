@@ -10,7 +10,7 @@ spec:
     name: akeyless-secret-store # Must match SecretStore on the cluster
 
   target:
-    name: akeyless-secret-to-create # Name for the secret to be created on the cluster
+    name: akeyless-cf-argowf # Name for the secret to be created on the cluster
     creationPolicy: Owner
 
   data:
