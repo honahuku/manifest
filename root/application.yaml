@@ -210,9 +210,6 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://akeylesslabs.github.io/helm-charts
-    targetRevision: 1.26.4
-    path: akeyless-gw
     plugin:
       name: custom-helm
   destination:
