@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: akeyless
 
 helmCharts:
-- name: akeyless
+- name: akeyless-api-gateway
   includeCRDs: false
   releaseName: akeyless/akeyless-api-gateway
   version: 1.26.4
