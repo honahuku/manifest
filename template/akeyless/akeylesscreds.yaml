@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: akeyless-secret-creds
+type: Opaque
+stringData:
+  accessId: "p-xxxxxxxxxxxx"
+  # k8s/aws_iam/gcp/azure_ad/api_key
+  accessType: api_key
+  # replace by the appropriate value for: <k8s-conf-name>/<gcp-audience>/<azure-obj-id>/<access-key>
+  accessTypeParam: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

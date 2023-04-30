@@ -6,3 +6,16 @@ For example, in the case of [secretstore.yaml](https://github.com/honahuku/manif
 
 You can find more details about this issue here:
 https://github.com/external-secrets/external-secrets/issues/2273
+
+## Applying ExternalSecret
+
+When applying the ExternalSecret located in the [externalsecret](https://github.com/honahuku/manifest/tree/main/config/externalsecret) directory, execute the following command. Change the file name as needed.
+
+```bash
+kubectl apply -f config/externalsecret/cf-argowf.yaml -n config
+```
+
+## akeyless-gwのデプロイ
+```bash
+kubectl apply -f secret/akeyless-api-gateway-credentials.yaml -n akeyless
+```

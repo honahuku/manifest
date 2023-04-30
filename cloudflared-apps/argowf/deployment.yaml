@@ -8,4 +8,4 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: argowf-tunnel-credentials
+          secretName: akeyless-cf-argowf
