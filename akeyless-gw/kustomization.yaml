@@ -5,6 +5,6 @@ namespace: akeyless
 helmCharts:
 - name: akeyless-api-gateway
   includeCRDs: false
-  releaseName: akeyless/akeyless-api-gateway
+  releaseName: akeyless-api-gateway
   version: 1.26.4
   repo: https://akeylesslabs.github.io/helm-charts
