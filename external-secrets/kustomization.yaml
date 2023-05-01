@@ -10,5 +10,4 @@ helmCharts:
   repo: https://charts.external-secrets.io
 
 resources:
-- externalsecret/
-- secretstore/
+- csstore-akeyless.yaml
