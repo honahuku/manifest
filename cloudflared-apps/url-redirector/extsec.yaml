@@ -1,7 +1,7 @@
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: cf-url-redirector
+  name: extsec
 spec:
   refreshInterval: 1h
 
