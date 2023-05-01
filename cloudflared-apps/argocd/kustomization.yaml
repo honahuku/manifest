@@ -1,6 +1,6 @@
 resources:
   - ../../template/cloudflared
-  - extsec-cf-argoccd.yaml
+  - extsec-cf-argocd.yaml
 
 patches:
   - path: deployment.yaml
