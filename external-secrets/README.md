@@ -1,21 +1,13 @@
-# Configuration Files
+# External Secrets
 
-This directory contains configuration files that cannot be placed in their respective directories.
+Synchronize secrets using external-secrets.  
+https://github.com/external-secrets/external-secrets  
 
-For example, in the case of [secretstore.yaml](https://github.com/honahuku/manifest/blob/main/config/secretstore.yaml), it could not be declared with the external-secrets application and its directory, so it is placed here.
+## ClusterSecretStore
 
-You can find more details about this issue here:
-https://github.com/external-secrets/external-secrets/issues/2273
+Since SecretStore can only be referenced from specific namespaces, ClusterSecretStore is used.  
+Akeyless Gateway used in the setup:  
+[akeyless-gw](https://github.com/honahuku/manifest/tree/main/akeyless-gw)  
 
-## Applying ExternalSecret
-
-When applying the ExternalSecret located in the [externalsecret](https://github.com/honahuku/manifest/tree/main/config/externalsecret) directory, execute the following command. Change the file name as needed.
-
-```bash
-kubectl apply -f config/externalsecret/cf-argowf.yaml -n config
-```
-
-## akeyless-gwのデプロイ
-```bash
-kubectl apply -f secret/akeyless-api-gateway-credentials.yaml -n akeyless
-```
+Template for authentication credentials secrets:  
+[template/akeyless](https://github.com/honahuku/manifest/tree/main/template/akeyless)  
