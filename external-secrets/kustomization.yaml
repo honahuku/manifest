@@ -5,6 +5,14 @@ namespace: external-secrets
 helmCharts:
 - name: external-secrets
   includeCRDs: true
+  valuesInline:
+    webhook:
+      create: false
+    certController:
+      create: false
+    crd:
+      conversion:
+        enabled: false
   releaseName: external-secrets
   version: 0.8.1
   repo: https://charts.external-secrets.io
