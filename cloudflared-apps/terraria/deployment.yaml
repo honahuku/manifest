@@ -8,4 +8,7 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: terraria-tunnel-credentials
+          secretName: akeyless-cf-terraria
+          items:
+            - key: cf-terraria
+              path: credentials.json

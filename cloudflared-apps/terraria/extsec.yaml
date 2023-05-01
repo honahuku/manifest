@@ -1,7 +1,7 @@
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: cf-argowf
+  name: extsec
 spec:
   refreshInterval: 1h
 
@@ -10,10 +10,10 @@ spec:
     name: akeyless-secret-store # Must match SecretStore on the cluster
 
   target:
-    name: akeyless-cf-argowf # Name for the secret to be created on the cluster
+    name: akeyless-cf-terraria # Name for the secret to be created on the cluster
     creationPolicy: Owner
 
   data:
-    - secretKey: cf-argowf # Key given to the secret to be created on the cluster
+    - secretKey: cf-terraria # Key given to the secret to be created on the cluster
       remoteRef:
-        key: /cf-creds/cf-argowf # Full path of the secret on Akeyless
+        key: /cf-creds/cf-terraria # Full path of the secret on Akeyless

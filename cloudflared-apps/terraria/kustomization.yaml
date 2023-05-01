@@ -1,5 +1,6 @@
 resources:
   - ../../template/cloudflared
+  - extsec.yaml
 
 patches:
   - path: deployment.yaml

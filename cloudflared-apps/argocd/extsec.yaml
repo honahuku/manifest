@@ -1,0 +1,19 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: extsec
+spec:
+  refreshInterval: 1h
+
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: akeyless-secret-store # Must match SecretStore on the cluster
+
+  target:
+    name: akeyless-cf-argocd # Name for the secret to be created on the cluster
+    creationPolicy: Owner
+
+  data:
+    - secretKey: cf-argocd # Key given to the secret to be created on the cluster
+      remoteRef:
+        key: /cf-creds/cf-argocd # Full path of the secret on Akeyless

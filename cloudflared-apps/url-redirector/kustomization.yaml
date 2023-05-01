@@ -1,6 +1,6 @@
 resources:
   - ../../template/cloudflared
-  - extsec-cf-url-redirector.yaml
+  - extsec.yaml
 
 patches:
   - path: deployment.yaml

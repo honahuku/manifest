@@ -8,4 +8,7 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: argocd-tunnel-credentials
+          secretName: akeyless-cf-argocd
+          items:
+            - key: cf-argocd
+              path: credentials.json
