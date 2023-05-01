@@ -10,5 +10,5 @@ spec:
         secret:
           secretName: akeyless-cf-argowf
           items:
-            - key: cf-argocd
+            - key: cf-argowf
               path: credentials.json
