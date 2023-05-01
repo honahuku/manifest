@@ -8,4 +8,7 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: url-redirector-tunnel-credentials
+          secretName: akeyless-cf-url-redirector
+          items:
+            - key: cf-url-redirector
+              path: credentials.json

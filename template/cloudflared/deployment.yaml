@@ -40,7 +40,8 @@ spec:
         # to run the tunnel. cloudflared will read this file from its local filesystem,
         # and it'll be stored in a k8s secret.
         - name: creds
-          mountPath: /etc/cloudflared/creds
+          mountPath: /etc/cloudflared/creds/credentials.json
+          subPath: credentials.json
           readOnly: true
       volumes:
       # Create a config.yaml file from the ConfigMap below.
