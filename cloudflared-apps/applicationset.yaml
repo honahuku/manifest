@@ -18,7 +18,7 @@ spec:
       project: cloudflared-apps
       source:
         repoURL: https://github.com/honahuku/manifest
-        targetRevision: add/manage-all-cloudflared-secrets-with-external-secrets
+        targetRevision: main
         path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
