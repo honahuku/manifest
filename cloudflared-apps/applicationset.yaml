@@ -18,7 +18,7 @@ spec:
       project: cloudflared-apps
       source:
         repoURL: https://github.com/honahuku/manifest
-        targetRevision: main
+        targetRevision: fix/argocd-cloudflared-settings
         path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc

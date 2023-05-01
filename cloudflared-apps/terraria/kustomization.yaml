@@ -1,9 +1,9 @@
 resources:
   - ../../template/cloudflared
-  - extsec.yaml
 
 patches:
   - path: deployment.yaml
+  - path: extsec.yaml
 
 configMapGenerator:
   - name: cloudflared
