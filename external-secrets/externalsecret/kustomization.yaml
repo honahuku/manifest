@@ -1,6 +1,6 @@
 namespace: cloudflared
 
 resources:
-  - cf-argocd.yaml
-  - cf-argowf.yaml
-  - cf-url-redirector.yaml
+  - extsec-cf-argocd.yaml
+  - extsec-cf-argowf.yaml
+  - extsec-cf-url-redirector.yaml
