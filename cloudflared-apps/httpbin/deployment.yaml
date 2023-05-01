@@ -8,4 +8,7 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: httpbin-tunnel-credentials
+          secretName: akeyless-cf-httpbin
+          items:
+            - key: cf-httpbin
+              path: credentials.json
