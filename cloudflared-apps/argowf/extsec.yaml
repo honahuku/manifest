@@ -10,4 +10,3 @@ spec:
     - secretKey: cf-argowf # Key given to the secret to be created on the cluster
       remoteRef:
         key: /cf-creds/cf-argowf # Full path of the secret on Akeyless
-  
