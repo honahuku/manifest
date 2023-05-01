@@ -46,9 +46,4 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: config
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: akeyless

@@ -1,5 +1,6 @@
 resources:
   - ../../template/cloudflared
+  - extsec-cf-argocwf.yaml
 
 patches:
   - path: deployment.yaml
