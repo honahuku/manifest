@@ -3,16 +3,9 @@ kind: ExternalSecret
 metadata:
   name: extsec
 spec:
-  refreshInterval: 1h
-
-  secretStoreRef:
-    kind: ClusterSecretStore
-    name: akeyless-secret-store # Must match SecretStore on the cluster
-
   target:
     name: akeyless-cf-url-redirector # Name for the secret to be created on the cluster
     creationPolicy: Owner
-
   data:
     - secretKey: cf-url-redirector # Key given to the secret to be created on the cluster
       remoteRef:
