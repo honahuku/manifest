@@ -9,6 +9,7 @@ https://docs.akeyless.io/docs/gateway-k8s
 To connect to Akeyless, create a secret with the pre-created API's adminAccessId and adminAccessKey, and inject it into the cluster.
 ```bash
 kubectl apply -f secret/akeyless-api-gateway-credentials.yaml -n akeyless
+kubectl apply -f secret/akeylesscreds.yaml -n akeyless
 ```
 
 ## Handling Helm with Kustomize
