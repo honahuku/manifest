@@ -5,20 +5,6 @@ namespace: kubeshark
 helmCharts:
 - name: kubeshark
   includeCRDs: false
-  valuesInline:
-    tap:
-      proxy:
-        worker:
-          port: 2327
-          srvport: 2327
-        hub:
-          port: 8898
-          srvport: 80
-        front:
-          port: 8899
-          srvport: 80
-        host: kubeshark.honahuku.com
-      namespaces: kubeshark
   releaseName: kubeshark
   version: "40.0"
   repo: https://helm.kubeshark.co
