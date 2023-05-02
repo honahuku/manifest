@@ -17,7 +17,7 @@ spec:
         - -i
         - any
         - -port
-        - "8897"
+        - "2327"
         - -packet-capture
         - libpcap
         - -servicemesh
