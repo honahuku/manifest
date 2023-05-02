@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: kubeshark-persistent-volume-claim
-  namespace: kubeshark
-spec:
-  storageClassName: longhorn
