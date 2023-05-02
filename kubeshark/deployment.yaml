@@ -75,8 +75,3 @@ spec:
       - name: kubeshark-persistent-volume
         persistentVolumeClaim:
           claimName: kubeshark-persistent-volume-claim
-  updateStrategy:
-    rollingUpdate:
-      maxSurge: 0
-      maxUnavailable: 1
-    type: RollingUpdate
