@@ -202,3 +202,24 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-dash
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: kube-dash
+    repoURL: https://github.com/honahuku/manifest
+    targetRevision: main
+  destination:
+    namespace: kube-dash
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
