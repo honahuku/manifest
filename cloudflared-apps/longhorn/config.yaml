@@ -1,0 +1,8 @@
+tunnel: longhorn
+credentials-file: /etc/cloudflared/creds/credentials.json
+metrics: 0.0.0.0:2000
+no-autoupdate: true
+ingress:
+- hostname: longhorn.honahuku.com
+  service: https://longhorn-frontend.longhorn-system:8000
+- service: http_status:404

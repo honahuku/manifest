@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudflared
+spec:
+  template:
+    spec:
+      volumes:
+      - name: creds
+        secret:
+          secretName: akeyless-cf-longhorn
+          items:
+            - key: cf-longhorn
+              path: credentials.json
