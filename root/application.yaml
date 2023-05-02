@@ -215,7 +215,7 @@ spec:
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   destination:
-    namespace: kube-dash
+    namespace: kubernetes-dashboard
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

@@ -51,4 +51,4 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: kube-dash
+  name: kubernetes-dashboard
