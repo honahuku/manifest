@@ -4,3 +4,5 @@ kind: Kustomization
 namespace: kubernetes-dashboard
 resources:
 - https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+- dash-sa.yaml
+- role.yaml
