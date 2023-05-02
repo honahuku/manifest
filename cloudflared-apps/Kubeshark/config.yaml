@@ -1,0 +1,10 @@
+tunnel: Kubeshark
+credentials-file: /etc/cloudflared/creds/credentials.json
+metrics: 0.0.0.0:2000
+no-autoupdate: true
+ingress:
+- hostname: Kubeshark.honahuku.com
+  service: http://kubeshark-front.Kubeshark:80
+- hostname: Kubeshark.honahuku.com
+  service: http://kubeshark-hub.Kubeshark:8897
+- service: http_status:404
