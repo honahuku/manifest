@@ -9,5 +9,9 @@ helmCharts:
   version: "40.0"
   repo: https://helm.kubeshark.co
 
+resources:
+  - deployment.yaml
+
 patches:
-  - path: base/kubeshark-pvc.yaml
+  - path: kubeshark-pvc.yaml
+  - path: remove-daemonset.yaml

@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubeshark-worker
+spec:
+  template:
+    spec:
+      containers:
+      - command:
+        - ./worker
+        - -i
+        - any
+        - -port
+        - "8897"
+        - -packet-capture
+        - libpcap
+        - -servicemesh
+        - -tls
+        - -procfs
+        - /hostproc
+        image: docker.io/kubeshark/worker:latest
+        imagePullPolicy: Always
+        name: kubeshark-worker
+        resources:
+          limits:
+            cpu: 750m
+            memory: 1Gi
+          requests:
+            cpu: 50m
+            memory: 50Mi
+        securityContext:
+          capabilities:
+            add:
+            - NET_RAW
+            - NET_ADMIN
+            - SYS_ADMIN
+            - SYS_PTRACE
+            - DAC_OVERRIDE
+            - SYS_RESOURCE
+            drop:
+            - ALL
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /hostproc
+          name: proc
+          readOnly: true
+        - mountPath: /sys
+          name: sys
+          readOnly: true
+        - mountPath: /app/data
+          name: kubeshark-persistent-volume
+      dnsPolicy: ClusterFirstWithHostNet
+      hostNetwork: true
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: kubeshark-service-account
+      serviceAccountName: kubeshark-service-account
+      terminationGracePeriodSeconds: 0
+      tolerations:
+      - effect: NoExecute
+        operator: Exists
+      - effect: NoSchedule
+        operator: Exists
+      volumes:
+      - hostPath:
+          path: /proc
+          type: ""
+        name: proc
+      - hostPath:
+          path: /sys
+          type: ""
+        name: sys
+      - name: kubeshark-persistent-volume
+        persistentVolumeClaim:
+          claimName: kubeshark-persistent-volume-claim
+  updateStrategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
