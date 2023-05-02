@@ -8,7 +8,7 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: akeyless-cf-Kubeshark
+          secretName: akeyless-cf-kubeshark
           items:
-            - key: cf-Kubeshark
+            - key: cf-kubeshark
               path: credentials.json
