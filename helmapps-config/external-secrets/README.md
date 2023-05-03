@@ -7,7 +7,7 @@ https://github.com/external-secrets/external-secrets
 
 Since SecretStore can only be referenced from specific namespaces, ClusterSecretStore is used.  
 Akeyless Gateway used in the setup:  
-[akeyless-gw](https://github.com/honahuku/manifest/tree/main/akeyless-gw)  
+[akeyless-gw](https://github.com/honahuku/manifest/tree/main/helmapps-config/akeyless-gw)  
 
 Template for authentication credentials secrets:  
 [template/akeyless](https://github.com/honahuku/manifest/tree/main/template/akeyless)  
