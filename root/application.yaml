@@ -217,7 +217,7 @@ spec:
   project: default
   source:
     chart: datadog-operator
-    repoURL: https://akeylesslabs.github.io/helm-charts
+    repoURL: https://helm.datadoghq.com
     targetRevision: 1.26.4
     helm:
       releaseName: datadog-operator
