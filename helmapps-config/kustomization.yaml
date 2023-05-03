@@ -3,4 +3,5 @@ kind: Kustomization
 
 resources:
 - akeyless-gw
+- datadog
 - external-secrets
