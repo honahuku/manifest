@@ -169,7 +169,7 @@ metadata:
 spec:
   project: default
   source:
-    chart: akeyless
+    chart: akeyless/akeyless-api-gateway
     repoURL: https://akeylesslabs.github.io/helm-charts
     targetRevision: 1.26.4
     helm:
