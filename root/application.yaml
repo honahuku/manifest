@@ -218,7 +218,7 @@ spec:
   source:
     chart: datadog-operator
     repoURL: https://helm.datadoghq.com
-    targetRevision: 1.26.4
+    targetRevision: 1.0.2
     helm:
       releaseName: datadog-operator
       values: |
