@@ -11,7 +11,7 @@ spec:
   credentials:
     apiSecret:
       secretName: akeyless-api-key-k8s
-      keyName: api-key
+      keyName: api-key-k8s
     appSecret:
       secretName: akeyless-app-key-k8s
-      keyName: app-key
+      keyName: app-key-k8s
