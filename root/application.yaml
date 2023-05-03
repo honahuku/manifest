@@ -174,6 +174,8 @@ spec:
     targetRevision: 1.26.4
     helm:
       releaseName: akeyless-api-gateway
+      values: |
+        existingSecret: akeyless-api-gateway-credentials
   destination:
     server: "https://kubernetes.default.svc"
     namespace: akeyless
