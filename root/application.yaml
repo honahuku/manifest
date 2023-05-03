@@ -207,3 +207,28 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: datadog-op
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: datadog-operator
+    repoURL: https://akeylesslabs.github.io/helm-charts
+    targetRevision: 1.26.4
+    helm:
+      releaseName: datadog-operator
+      values: |
+        watchNamespaces: []
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: datadog
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
