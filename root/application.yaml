@@ -148,9 +148,11 @@ metadata:
 spec:
   project: default
   source:
-    path: external-secrets
-    repoURL: https://github.com/honahuku/manifest
-    targetRevision: main
+    chart: external-secrets
+    repoURL: https://charts.external-secrets.io
+    targetRevision: 0.8.1
+    helm:
+      releaseName: external-secrets
   destination:
     namespace: external-secrets
     server: https://kubernetes.default.svc
@@ -169,11 +171,35 @@ metadata:
 spec:
   project: default
   source:
-    path: akeyless-gw
+    chart: akeyless-api-gateway
+    repoURL: https://akeylesslabs.github.io/helm-charts
+    targetRevision: 1.26.4
+    helm:
+      releaseName: akeyless-api-gateway
+      values: |
+        existingSecret: akeyless-api-gateway-credentials
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: akeyless
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helmapps-config
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: helmapps-config
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   destination:
-    namespace: akeyless
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
