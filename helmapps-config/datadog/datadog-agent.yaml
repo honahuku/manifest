@@ -1,0 +1,17 @@
+apiVersion: datadoghq.com/v2alpha1
+kind: DatadogAgent
+metadata:
+  name: datadog
+spec:
+  features:
+    apm:
+      enabled: true
+    logCollection:
+      enabled: true
+  credentials:
+    apiSecret:
+      secretName: akeyless-api-key-k8s
+      keyName: api-key
+    appSecret:
+      secretName: akeyless-app-key-k8s
+      keyName: app-key
