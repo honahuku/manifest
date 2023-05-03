@@ -169,11 +169,33 @@ metadata:
 spec:
   project: default
   source:
-    path: akeyless-gw
+    chart: akeyless
+    repoURL: https://akeylesslabs.github.io/helm-charts
+    targetRevision: 1.26.4
+    helm:
+      releaseName: akeyless-api-gateway
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: akeyless
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helmapps-config
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: helmapps-config
     repoURL: https://github.com/honahuku/manifest
     targetRevision: main
   destination:
-    namespace: akeyless
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
