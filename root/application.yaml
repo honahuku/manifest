@@ -223,9 +223,11 @@ spec:
       releaseName: datadog-operator
       values: |
         watchNamespaces: []
-        datadogCRDs.crds.datadogAgents: false
-        datadogCRDs.crds.datadogMetrics: false
-        datadogCRDs.crds.datadogMonitors: false
+        datadogCRDs:
+          crds:
+            datadogAgents: false
+            datadogMetrics: false
+            datadogMonitors: false
   destination:
     server: "https://kubernetes.default.svc"
     namespace: datadog
