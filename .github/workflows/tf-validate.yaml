@@ -3,7 +3,7 @@ name: Terraform check
 on:
   push:
     paths:
-      - 'terraform/*'
+      - 'terraform/**'
 
 defaults:
   run:
