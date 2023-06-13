@@ -7,7 +7,7 @@ applications:
     source:
       repoURL: https://github.com/honahuku/manifest
       targetRevision: main
-      path: manifest/tree/main/root
+      path: root
       directory:
         recurse: true
     finalizers:
