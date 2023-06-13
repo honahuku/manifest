@@ -5,15 +5,15 @@ resource "vultr_load_balancer" "asinoyu-lb" {
 
   forwarding_rules {
     frontend_protocol = "tcp"
-    frontend_port = 80
-    backend_protocol = "tcp"
-    backend_port = 32277
+    frontend_port     = 80
+    backend_protocol  = "tcp"
+    backend_port      = 32277
   }
 
   forwarding_rules {
     frontend_protocol = "tcp"
-    frontend_port = 443
-    backend_protocol = "tcp"
-    backend_port = 31603
+    frontend_port     = 443
+    backend_protocol  = "tcp"
+    backend_port      = 31603
   }
 }
