@@ -14,4 +14,3 @@ resource "vultr_kubernetes_node_pools" "general" {
   min_nodes     = 1
   max_nodes     = 3
 }
-
