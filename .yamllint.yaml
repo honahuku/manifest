@@ -1,0 +1,17 @@
+# ref: https://qiita.com/EnKUMA/items/6974e310221fc9765c2f
+yaml-files:
+  - "*.yaml"
+  - "*.yml"
+
+# Error: 改行文字を統一する
+new-lines: enable
+
+# Warning: ファイルの末尾に改行文字を記述する
+new-line-at-end-of-file:
+  level: warning
+
+# 特に制限なし: ドキュメント終了記号 '...' を必須にしない
+document-end: disable
+
+# 特に制限なし: ドキュメント開始記号 '---' を必須にしない
+document-start: disable
