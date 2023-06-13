@@ -330,7 +330,7 @@ configs:
 
     # -- TLS certificates for Git repositories
     # @default -- `{}` (See [values.yaml])
-    certificates: {}
+    certificates: {
       argocd.honahuku.com: |
         -----BEGIN CERTIFICATE-----
         MIIEFTCCAv2gAwIBAgIUG0hYLQWyMHjMiV5Q3e2wg6ZoUP0wDQYJKoZIhvcNAQEL
@@ -356,7 +356,7 @@ configs:
         6IUy/D128su+jW0btCTyISxwfvwVeVjPorgfK+le5lqZA7UUwhOxyOkfvWe7DpyV
         MtnvWi9RUNg/pX4R3tz5VHTuDt2TTZxtBs4i6tL5sz1dOoj1h4d4OvA=
         -----END CERTIFICATE-----
-
+    }
   # ConfigMap for Config Management Plugins
   # Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/config-management-plugins/
   cmp:
