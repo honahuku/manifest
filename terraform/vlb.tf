@@ -16,4 +16,9 @@ resource "vultr_load_balancer" "asinoyu-lb" {
     backend_protocol  = "tcp"
     backend_port      = 31603
   }
+
+  ssl {
+    private_key = tls_private_key.argocd_honahuku_com.private_key_pem
+    certificate = cloudflare_origin_ca_certificate.argocd_honahuku_com.certificate
+  }
 }

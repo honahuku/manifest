@@ -4,7 +4,6 @@ resource "tls_private_key" "argocd_honahuku_com" {
 }
 
 resource "tls_cert_request" "argocd_honahuku_com" {
-  key_algorithm   = tls_private_key.argocd_honahuku_com.algorithm
   private_key_pem = tls_private_key.argocd_honahuku_com.private_key_pem
 
   subject {
