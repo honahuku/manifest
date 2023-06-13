@@ -1,12 +1,21 @@
-provider "vultr" {
+terraform {
   required_version = ">= 0.13"
   required_providers {
     vultr = {
-      source      = "vultr/vultr"
-      version     = "2.15.1"
-      api_key     = var.VULTR_API_KEY
-      rate_limit  = 100
-      retry_limit = 3
+      source  = "vultr/vultr"
+      version = "~> 2.15"
     }
   }
+
+  backend "remote" {
+    organization = "honahuku"
+
+    workspaces {
+      name = "manifest"
+    }
+  }
+}
+
+provider "vultr" {
+  api_key = var.VULTR_API_KEY
 }
