@@ -1,0 +1,28 @@
+name: Terraform fmt check
+
+on:
+  push:
+    paths:
+      - "terraform/**"
+
+defaults:
+  run:
+    shell: bash
+    working-directory: terraform
+
+jobs:
+  tf-validate:
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v3
+    
+      - name: "tflint"
+        uses: reviewdog/action-tflint@master
+        with:
+          fail_on_error: true
+
+      - name: "fmt"
+        uses: hashicorp/setup-terraform@v2
+        run: terraform fmt -check -recursive
+        with:
+          fail_on_error: true
