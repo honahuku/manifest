@@ -12,6 +12,7 @@
         "Kustomization",
         "kustomize",
         "redirector",
-        "secretstore"
+        "secretstore",
+        "vultr"
     ]
 }
