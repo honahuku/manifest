@@ -8,7 +8,7 @@ resource "cloudflare_record" "a_terraria_honahuku_com" {
 
 resource "cloudflare_record" "a_argocd_honahuku_com" {
   name    = "argocd"
-  proxied = true
+  proxied = false
   type    = "A"
   value   = vultr_load_balancer.asinoyu-lb.ipv4
   zone_id = cloudflare_zone.honahuku_com.id
