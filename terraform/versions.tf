@@ -17,5 +17,7 @@ terraform {
 }
 
 provider "vultr" {
-  api_key = var.VULTR_API_KEY
+  api_key     = var.VULTR_API_KEY
+  rate_limit  = 1300
+  retry_limit = 6
 }
