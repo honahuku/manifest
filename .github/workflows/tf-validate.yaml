@@ -1,9 +1,6 @@
 name: Terraform check
 
-on:
-  push:
-    paths:
-      - "terraform/**"
+on: [push]
 
 defaults:
   run:
