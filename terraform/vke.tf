@@ -1,5 +1,5 @@
 resource "vultr_kubernetes" "asinoyu" {
-  region  = "itm" # 大阪リージョン
+  region  = "itm"     # 大阪リージョン
   label   = "asinoyu" # 芦之湯, 〒250-0523
   version = "v1.25.7+2"
 

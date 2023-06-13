@@ -13,6 +13,11 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = "~> 2.21"
     }
+
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.7"
+    }
   }
 
   backend "remote" {
@@ -43,4 +48,8 @@ provider "helm" {
     client_certificate     = local.k8s_client_certificate_asinoyu
     client_key             = local.k8s_client_key_asinoyu
   }
+}
+
+provider "cloudflare" {
+  api_token = var.CF_API_TOKEN
 }
