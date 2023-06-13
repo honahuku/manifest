@@ -1,7 +1,7 @@
 resource "vultr_kubernetes" "asinoyu" {
   region  = "itm" # 大阪リージョン
   label   = "asinoyu"
-  version = "v1.25"
+  version = "v1.25.7+2"
 
   node_pools {
     node_quantity = 2
