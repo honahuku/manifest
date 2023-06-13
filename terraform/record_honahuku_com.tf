@@ -6,6 +6,14 @@ resource "cloudflare_record" "a_terraria_honahuku_com" {
   zone_id = cloudflare_zone.honahuku_com.id
 }
 
+resource "cloudflare_record" "a_argocd_honahuku_com" {
+  name    = "argocd"
+  proxied = true
+  type    = "A"
+  value   = vultr_load_balancer.asinoyu-lb.ipv4
+  zone_id = cloudflare_zone.honahuku_com.id
+}
+
 resource "cloudflare_record" "cname_diary_honahuku_com" {
   name    = "diary"
   proxied = true
