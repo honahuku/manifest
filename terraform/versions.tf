@@ -18,6 +18,11 @@ terraform {
       source  = "cloudflare/cloudflare"
       version = "~> 4.7"
     }
+
+    tls = {
+      source  = "hashicorp/tls"
+      version = "~> 4.0"
+    }
   }
 
   backend "remote" {
