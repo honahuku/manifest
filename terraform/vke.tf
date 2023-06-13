@@ -4,7 +4,7 @@ resource "vultr_kubernetes" "asinoyu" {
   version = "v1.25.7+2"
 
   node_pools {
-    node_quantity = 2
+    node_quantity = 1
     plan          = "vc2-1c-2gb"
     label         = "general"
     auto_scaler   = true
