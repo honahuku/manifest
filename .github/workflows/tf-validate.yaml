@@ -1,4 +1,4 @@
-name: Terraform fmt check
+name: Terraform check
 
 on:
   push:
@@ -12,9 +12,10 @@ defaults:
 
 jobs:
   tf-validate:
+    name: tf-validate
+    runs-on: ubuntu-latest
     steps:
-      - name: "checkout"
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
     
       - name: "tflint"
         uses: reviewdog/action-tflint@master
