@@ -1,28 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-cd
-  namespace: argocd
-spec:
-  project: system
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  source:
-    path: argocd/base
-    repoURL: https://github.com/honahuku/manifest
-    targetRevision: main
-  syncPolicy:
-    automated:
-      # リソース自動削除。trueならmanifestに存在しないリソースは削除される
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
   name: cloudflared-apps
   namespace: argocd
 spec:
@@ -118,27 +96,6 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: longhorn
-  namespace: argocd
-spec:
-  project: default
-  source:
-    chart: longhorn
-    repoURL: https://charts.longhorn.io
-    targetRevision: 1.4.1
-    helm:
-      releaseName: longhorn
-  destination:
-    server: "https://kubernetes.default.svc"
-    namespace: longhorn-system
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
