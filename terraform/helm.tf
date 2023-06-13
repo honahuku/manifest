@@ -11,5 +11,9 @@ resource "helm_release" "argocd" {
   recreate_pods   = true
   cleanup_on_fail = true
 
-  values = []
+  values = [
+    # terraform working directory からの相対パス
+    # ref: https://github.com/GiganticMinecraft/seichi_infra/blob/main/terraform/onp_cluster_argocd.tf
+    file("./config/argocd-helm-chart-values.yaml")
+  ]
 }
