@@ -6,14 +6,14 @@ resource "vultr_load_balancer" "asinoyu-lb" {
   forwarding_rules {
     frontend_protocol = "http"
     frontend_port     = 80
-    backend_protocol  = "tcp"
+    backend_protocol  = "http"
     backend_port      = 32277
   }
 
   forwarding_rules {
     frontend_protocol = "https"
     frontend_port     = 443
-    backend_protocol  = "tcp"
+    backend_protocol  = "https"
     backend_port      = 31603
   }
 
