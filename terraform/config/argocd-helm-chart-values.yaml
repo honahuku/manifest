@@ -330,33 +330,32 @@ configs:
 
     # -- TLS certificates for Git repositories
     # @default -- `{}` (See [values.yaml])
-    certificates: {
-      argocd.honahuku.com: |
-        -----BEGIN CERTIFICATE-----
-        MIIEFTCCAv2gAwIBAgIUG0hYLQWyMHjMiV5Q3e2wg6ZoUP0wDQYJKoZIhvcNAQEL
-        BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
-        Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD
-        VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgYmQ2
-        ZGIxZmY0MGExYWY5MzQ3YmM1ZjE5MWFjOTI1ZWEwHhcNMjMwNjEzMTkzMzAwWhcN
-        MzMwNjEwMTkzMzAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy
-        ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALFDYe1J8lO2/0hWR6Jt
-        HgXSSyE8xIINLSfkWI+K1Y2c1slaM3vSV8TTsfbc3I/O4PrUYfuNR2Gqhrvhjr7b
-        5QCjxv/jzvwrDGRK+nR12XvIa9Ess/YH0lnwjJyfnUH8ra0ZVni+7hioHnCcyOw2
-        rgVXH0g0+98qjLbvTPi6bOZ4ItTWoepHUPsOeAcyvDDY0P3Vrkdt31ueYX6ChUtY
-        JHFBpruWYPSBS1CCpr4NWg0cmeHRVIKRSwH9dXrrS0uBzYhGhR0rLNVWv+qhgoQu
-        wIjxgi3cbp0STrbW5+B2KuXYaIRRKt89GbQhnn4aA/O+xj3+ujarGNU329WHtNaK
-        57cCAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA
-        MB0GA1UdDgQWBBTD1LyM/oJghOhr2cHtLR88P9JYpDAfBgNVHSMEGDAWgBQOhSR9
-        wi2YFFVDwdh4ZYXQhRok8DBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs
-        b3VkZmxhcmUuY29tL2RhODA0OWMxLTQ4YzAtNDUzNC1hOTk1LTA3OWI4NmE3NDFh
-        Zi5jcmwwDQYJKoZIhvcNAQELBQADggEBALvtfMpxuyaCjELw8FqDCqzYhIsLyG9n
-        ElG9dZpk61oRQJXhorCwCslnsfPuGATI7THHcXLCIZXEYj1UjJ7805lpFppAC1Lx
-        Gx7uC024Y5FYfJJgA7x6+s5wKwKYiTWlkUCTig+CkWSz1cSxlQ3YWi3LYdV/cAEG
-        b8VMnZCVm6nx+MkPG0Xk+KaaPiSy+ZrrU7qlhSTNrOZ7+E7l6+9m50RQ5Scb6xA2
-        6IUy/D128su+jW0btCTyISxwfvwVeVjPorgfK+le5lqZA7UUwhOxyOkfvWe7DpyV
-        MtnvWi9RUNg/pX4R3tz5VHTuDt2TTZxtBs4i6tL5sz1dOoj1h4d4OvA=
-        -----END CERTIFICATE-----
-    }
+    certificates: {}
+    #   argocd.honahuku.com: |
+    #     -----BEGIN CERTIFICATE-----
+    #     MIIEFTCCAv2gAwIBAgIUG0hYLQWyMHjMiV5Q3e2wg6ZoUP0wDQYJKoZIhvcNAQEL
+    #     BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
+    #     Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD
+    #     VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgYmQ2
+    #     ZGIxZmY0MGExYWY5MzQ3YmM1ZjE5MWFjOTI1ZWEwHhcNMjMwNjEzMTkzMzAwWhcN
+    #     MzMwNjEwMTkzMzAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy
+    #     ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALFDYe1J8lO2/0hWR6Jt
+    #     HgXSSyE8xIINLSfkWI+K1Y2c1slaM3vSV8TTsfbc3I/O4PrUYfuNR2Gqhrvhjr7b
+    #     5QCjxv/jzvwrDGRK+nR12XvIa9Ess/YH0lnwjJyfnUH8ra0ZVni+7hioHnCcyOw2
+    #     rgVXH0g0+98qjLbvTPi6bOZ4ItTWoepHUPsOeAcyvDDY0P3Vrkdt31ueYX6ChUtY
+    #     JHFBpruWYPSBS1CCpr4NWg0cmeHRVIKRSwH9dXrrS0uBzYhGhR0rLNVWv+qhgoQu
+    #     wIjxgi3cbp0STrbW5+B2KuXYaIRRKt89GbQhnn4aA/O+xj3+ujarGNU329WHtNaK
+    #     57cCAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA
+    #     MB0GA1UdDgQWBBTD1LyM/oJghOhr2cHtLR88P9JYpDAfBgNVHSMEGDAWgBQOhSR9
+    #     wi2YFFVDwdh4ZYXQhRok8DBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs
+    #     b3VkZmxhcmUuY29tL2RhODA0OWMxLTQ4YzAtNDUzNC1hOTk1LTA3OWI4NmE3NDFh
+    #     Zi5jcmwwDQYJKoZIhvcNAQELBQADggEBALvtfMpxuyaCjELw8FqDCqzYhIsLyG9n
+    #     ElG9dZpk61oRQJXhorCwCslnsfPuGATI7THHcXLCIZXEYj1UjJ7805lpFppAC1Lx
+    #     Gx7uC024Y5FYfJJgA7x6+s5wKwKYiTWlkUCTig+CkWSz1cSxlQ3YWi3LYdV/cAEG
+    #     b8VMnZCVm6nx+MkPG0Xk+KaaPiSy+ZrrU7qlhSTNrOZ7+E7l6+9m50RQ5Scb6xA2
+    #     6IUy/D128su+jW0btCTyISxwfvwVeVjPorgfK+le5lqZA7UUwhOxyOkfvWe7DpyV
+    #     MtnvWi9RUNg/pX4R3tz5VHTuDt2TTZxtBs4i6tL5sz1dOoj1h4d4OvA=
+    #     -----END CERTIFICATE-----
   # ConfigMap for Config Management Plugins
   # Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/config-management-plugins/
   cmp:
