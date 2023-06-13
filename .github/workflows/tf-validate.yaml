@@ -3,7 +3,7 @@ name: Terraform check
 on:
   push:
     paths:
-      - "./terraform/**"
+      - "terraform/**"
 
 defaults:
   run:
@@ -16,14 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-    
+
       - name: "tflint"
         uses: reviewdog/action-tflint@master
         with:
           fail_on_error: true
 
-      - name: "fmt"
-        uses: hashicorp/setup-terraform@v2
-        run: terraform fmt -check -recursive
+      - uses: hashicorp/setup-terraform@v2
         with:
-          fail_on_error: true
+          terraform_version: 1.3.3
+      - name: Terraform fmt
+        run: terraform fmt -check -recursive
