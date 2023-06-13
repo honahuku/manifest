@@ -17,7 +17,7 @@ spec:
         app.kubernetes.io/name: terraria-service
     spec:
       containers:
-      - name: httpbin
-        image: kennethreitz/httpbin:latest
-        ports:
-        - containerPort: 80
+        - name: httpbin
+          image: kennethreitz/httpbin:latest
+          ports:
+            - containerPort: 80

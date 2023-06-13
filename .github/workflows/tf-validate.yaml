@@ -1,0 +1,29 @@
+name: Terraform check
+
+on:
+  push:
+    paths:
+      - 'terraform/**'
+
+defaults:
+  run:
+    shell: bash
+    working-directory: terraform
+
+jobs:
+  tf-validate:
+    name: tf-validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: "tflint"
+        uses: reviewdog/action-tflint@master
+        with:
+          fail_on_error: true
+
+      - uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.3.3
+      - name: Terraform fmt
+        run: terraform fmt -check -recursive

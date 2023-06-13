@@ -12,6 +12,9 @@
         "Kustomization",
         "kustomize",
         "redirector",
-        "secretstore"
+        "reviewdog",
+        "secretstore",
+        "tflint",
+        "vultr"
     ]
 }

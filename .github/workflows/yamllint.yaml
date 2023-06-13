@@ -1,0 +1,16 @@
+name: yamllint
+
+on:
+  push:
+    paths:
+      - '**.yml'
+      - '**.yaml'
+
+jobs:
+  yamllint:
+    name: yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: yamllint
+        uses: reviewdog/action-yamllint@v1
