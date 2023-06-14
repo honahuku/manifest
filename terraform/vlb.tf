@@ -11,7 +11,7 @@ resource "vultr_load_balancer" "asinoyu-lb" {
   }
 
   forwarding_rules {
-    frontend_protocol = "https"
+    frontend_protocol = "http"
     frontend_port     = 443
     backend_protocol  = "https"
     backend_port      = 31603
