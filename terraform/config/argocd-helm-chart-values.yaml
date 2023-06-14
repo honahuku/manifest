@@ -1769,9 +1769,9 @@ server:
     # -- Server service type
     type: LoadBalancer
     # -- Server service http port for NodePort service type (only if `server.service.type` is set to "NodePort")
-    nodePortHttp: 30080
+    nodePortHttp: 80
     # -- Server service https port for NodePort service type (only if `server.service.type` is set to "NodePort")
-    nodePortHttps: 30443
+    nodePortHttps: 443
     # -- Server service http port
     servicePortHttp: 80
     # -- Server service https port
