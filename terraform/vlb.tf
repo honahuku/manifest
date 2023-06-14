@@ -1,7 +1,8 @@
 resource "vultr_load_balancer" "asinoyu-lb" {
   region              = "itm"
-  label               = "a4511a7a7c2b7476eb6a2c83c9fbc08d"
+  label               = "asinoyu-lb"
   balancing_algorithm = "roundrobin"
+  ssl_redirect = true
 
   forwarding_rules {
     frontend_protocol = "http"
