@@ -6,7 +6,7 @@
 resource "vultr_instance" "k8s_test01" {
     plan = "vc2-1c-2gb"
     region = "itm"
-    os_id = 387
+    os_id = 1743
     label = "k8s-test01"
     enable_ipv6 = true
     backups = "disabled"
@@ -17,7 +17,7 @@ resource "vultr_instance" "k8s_test01" {
 resource "vultr_instance" "k8s_test02" {
     plan = "vc2-1c-2gb"
     region = "itm"
-    os_id = 387
+    os_id = 1743
     label = "k8s-test02"
     enable_ipv6 = true
     backups = "disabled"
@@ -28,7 +28,7 @@ resource "vultr_instance" "k8s_test02" {
 resource "vultr_instance" "k8s_test03" {
     plan = "vc2-1c-2gb"
     region = "itm"
-    os_id = 387
+    os_id = 1743
     label = "k8s-test03"
     enable_ipv6 = true
     backups = "disabled"
