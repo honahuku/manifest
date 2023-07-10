@@ -3,33 +3,33 @@
 # OSの一覧を抽出
 # curl "https://api.vultr.com/v2/os" -X GET | jq > os.json
 
-resource "vultr_instance" "k8s_test08" {
+resource "vultr_instance" "k8s_test11" {
     plan = "vc2-1c-2gb"
     region = "itm"
     os_id = 1743
-    label = "k8s_test08"
+    label = "k8s_test11"
     enable_ipv6 = true
     backups = "disabled"
     ddos_protection = false
     ssh_key_ids = ["${vultr_ssh_key.github.id}"]
 }
 
-resource "vultr_instance" "k8s_test09" {
+resource "vultr_instance" "k8s_test12" {
     plan = "vc2-1c-2gb"
     region = "itm"
     os_id = 1743
-    label = "k8s-test09"
+    label = "k8s_test12"
     enable_ipv6 = true
     backups = "disabled"
     ddos_protection = false
     ssh_key_ids = ["${vultr_ssh_key.github.id}"]
 }
 
-resource "vultr_instance" "k8s_test10" {
+resource "vultr_instance" "k8s_test13" {
     plan = "vc2-1c-2gb"
     region = "itm"
     os_id = 1743
-    label = "k8s-test10"
+    label = "k8s_test13"
     enable_ipv6 = true
     backups = "disabled"
     ddos_protection = false
