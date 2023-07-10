@@ -35,3 +35,36 @@ resource "vultr_instance" "k8s_test13" {
     ddos_protection = false
     ssh_key_ids = ["${vultr_ssh_key.github.id}"]
 }
+
+resource "vultr_instance" "k8s_test14" {
+    plan = "vc2-1c-2gb"
+    region = "itm"
+    os_id = 1743
+    label = "k8s_test14"
+    enable_ipv6 = true
+    backups = "disabled"
+    ddos_protection = false
+    ssh_key_ids = ["${vultr_ssh_key.github.id}"]
+}
+
+resource "vultr_instance" "k8s_test15" {
+    plan = "vc2-1c-2gb"
+    region = "itm"
+    os_id = 1743
+    label = "k8s_test15"
+    enable_ipv6 = true
+    backups = "disabled"
+    ddos_protection = false
+    ssh_key_ids = ["${vultr_ssh_key.github.id}"]
+}
+
+resource "vultr_instance" "k8s_test16" {
+    plan = "vc2-1c-2gb"
+    region = "itm"
+    os_id = 1743
+    label = "k8s_test16"
+    enable_ipv6 = true
+    backups = "disabled"
+    ddos_protection = false
+    ssh_key_ids = ["${vultr_ssh_key.github.id}"]
+}
