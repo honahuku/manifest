@@ -3,35 +3,35 @@
 # OSの一覧を抽出
 # curl "https://api.vultr.com/v2/os" -X GET | jq > os.json
 
-resource "vultr_instance" "k8s_test07" {
+resource "vultr_instance" "k8s_test08" {
     plan = "vc2-1c-2gb"
     region = "itm"
     os_id = 1743
-    label = "k8s_test07"
+    label = "k8s_test08"
     enable_ipv6 = true
     backups = "disabled"
     ddos_protection = false
     ssh_key_ids = ["${vultr_ssh_key.github.id}"]
 }
 
-# resource "vultr_instance" "k8s_test05" {
-#     plan = "vc2-1c-2gb"
-#     region = "itm"
-#     os_id = 1743
-#     label = "k8s-test05"
-#     enable_ipv6 = true
-#     backups = "disabled"
-#     ddos_protection = false
-#     ssh_key_ids = ["${vultr_ssh_key.github.id}"]
-# }
+resource "vultr_instance" "k8s_test09" {
+    plan = "vc2-1c-2gb"
+    region = "itm"
+    os_id = 1743
+    label = "k8s-test09"
+    enable_ipv6 = true
+    backups = "disabled"
+    ddos_protection = false
+    ssh_key_ids = ["${vultr_ssh_key.github.id}"]
+}
 
-# resource "vultr_instance" "k8s_test06" {
-#     plan = "vc2-1c-2gb"
-#     region = "itm"
-#     os_id = 1743
-#     label = "k8s-test06"
-#     enable_ipv6 = true
-#     backups = "disabled"
-#     ddos_protection = false
-#     ssh_key_ids = ["${vultr_ssh_key.github.id}"]
-# }
+resource "vultr_instance" "k8s_test10" {
+    plan = "vc2-1c-2gb"
+    region = "itm"
+    os_id = 1743
+    label = "k8s-test10"
+    enable_ipv6 = true
+    backups = "disabled"
+    ddos_protection = false
+    ssh_key_ids = ["${vultr_ssh_key.github.id}"]
+}
