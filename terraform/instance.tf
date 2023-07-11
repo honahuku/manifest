@@ -8,6 +8,7 @@ resource "vultr_instance" "k8s_test26" {
     region = "itm"
     os_id = 1743
     label = "k8s_test26"
+    hostname = "k8s_test26"
     enable_ipv6 = true
     backups = "disabled"
     ddos_protection = false
@@ -19,6 +20,7 @@ resource "vultr_instance" "k8s_test27" {
     region = "itm"
     os_id = 1743
     label = "k8s_test27"
+    hostname = "k8s_test27"
     enable_ipv6 = true
     backups = "disabled"
     ddos_protection = false
@@ -30,6 +32,7 @@ resource "vultr_instance" "k8s_test28" {
     region = "itm"
     os_id = 1743
     label = "k8s_test28"
+    hostname = "k8s_test28"
     enable_ipv6 = true
     backups = "disabled"
     ddos_protection = false
