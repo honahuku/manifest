@@ -39,3 +39,25 @@ kustomize build `directory` | kubectl apply -f -
 ```
 
 Feel free to modify the content as needed.
+
+## aqua
+### install
+```bash
+curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer | bash
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua"
+touch "${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml"
+
+echo "export PATH=\"\${AQUA_ROOT_DIR:-\${XDG_DATA_HOME:-\$HOME/.local/share}/aquaproj-aqua}/bin:\$PATH\"" >> "$HOME/.bashrc"
+echo "export AQUA_GLOBAL_CONFIG=\${AQUA_GLOBAL_CONFIG:-}:\${XDG_CONFIG_HOME:-\$HOME/.config}/aquaproj-aqua/aqua.yaml" >> "$HOME/.bashrc"
+```
+https://aquaproj.github.io/docs/install
+
+### add
+```bash
+aqua g -i
+```
+
+### install
+```bash
+aqua i -a -l
+```
