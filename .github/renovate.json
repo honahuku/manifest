@@ -1,24 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "extends": [
-      "schedule:weekly"
-    ]
-  },
-  "labels": [
-    "dependencies"
-  ],
-  "dependencyDashboard": true,
-  "schedule": [
-    "after 8am on monday",
-    "before 10am on monday"
-  ],
   "extends": [
-    "config:base",
-    ":timezone(Asia/Tokyo)",
-    "github>aquaproj/aqua-renovate-config#1.6.0",
-    ":disableRateLimiting",
-    ":automergePr"
+    "github>honahuku/renovate-config"
   ]
 }
