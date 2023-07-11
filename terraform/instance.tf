@@ -4,37 +4,37 @@
 # curl "https://api.vultr.com/v2/os" -X GET | jq > os.json
 
 resource "vultr_instance" "k8s_test26" {
-    plan = "vc2-1c-2gb"
-    region = "itm"
-    os_id = 1743
-    label = "k8s_test26"
-    hostname = "k8s_test26"
-    enable_ipv6 = true
-    backups = "disabled"
-    ddos_protection = false
-    ssh_key_ids = ["${vultr_ssh_key.github.id}"]
+  plan            = "vc2-1c-2gb"
+  region          = "itm"
+  os_id           = 1743
+  label           = "k8s_test26"
+  hostname        = "k8s_test26"
+  enable_ipv6     = true
+  backups         = "disabled"
+  ddos_protection = false
+  ssh_key_ids     = ["${vultr_ssh_key.github.id}"]
 }
 
 resource "vultr_instance" "k8s_test27" {
-    plan = "vc2-1c-2gb"
-    region = "itm"
-    os_id = 1743
-    label = "k8s_test27"
-    hostname = "k8s_test27"
-    enable_ipv6 = true
-    backups = "disabled"
-    ddos_protection = false
-    ssh_key_ids = ["${vultr_ssh_key.github.id}"]
+  plan            = "vc2-1c-2gb"
+  region          = "itm"
+  os_id           = 1743
+  label           = "k8s_test27"
+  hostname        = "k8s_test27"
+  enable_ipv6     = true
+  backups         = "disabled"
+  ddos_protection = false
+  ssh_key_ids     = ["${vultr_ssh_key.github.id}"]
 }
 
 resource "vultr_instance" "k8s_test28" {
-    plan = "vc2-1c-2gb"
-    region = "itm"
-    os_id = 1743
-    label = "k8s_test28"
-    hostname = "k8s_test28"
-    enable_ipv6 = true
-    backups = "disabled"
-    ddos_protection = false
-    ssh_key_ids = ["${vultr_ssh_key.github.id}"]
+  plan            = "vc2-1c-2gb"
+  region          = "itm"
+  os_id           = 1743
+  label           = "k8s_test28"
+  hostname        = "k8s_test28"
+  enable_ipv6     = true
+  backups         = "disabled"
+  ddos_protection = false
+  ssh_key_ids     = ["${vultr_ssh_key.github.id}"]
 }
