@@ -3,12 +3,18 @@
 # OSの一覧を抽出
 # curl "https://api.vultr.com/v2/os" -X GET | jq > os.json
 
+locals {
+  instance_k8s_test26 = "k8s_test26"
+  instance_k8s_test27 = "k8s_test27"
+  instance_k8s_test28 = "k8s_test28"
+}
+
 resource "vultr_instance" "k8s_test26" {
   plan            = "vc2-1c-2gb"
   region          = "itm"
   os_id           = 1743
-  label           = "k8s_test26"
-  hostname        = "k8s_test26"
+  label           = local.instance_k8s_test26
+  hostname        = replace(local.instance_k8s_test26, "_", "-")
   enable_ipv6     = true
   backups         = "disabled"
   ddos_protection = false
@@ -19,8 +25,8 @@ resource "vultr_instance" "k8s_test27" {
   plan            = "vc2-1c-2gb"
   region          = "itm"
   os_id           = 1743
-  label           = "k8s_test27"
-  hostname        = "k8s_test27"
+  label           = local.instance_k8s_test27
+  hostname        = replace(local.instance_k8s_test27, "_", "-")
   enable_ipv6     = true
   backups         = "disabled"
   ddos_protection = false
@@ -31,8 +37,8 @@ resource "vultr_instance" "k8s_test28" {
   plan            = "vc2-1c-2gb"
   region          = "itm"
   os_id           = 1743
-  label           = "k8s_test28"
-  hostname        = "k8s_test28"
+  label           = local.instance_k8s_test28
+  hostname        = replace(local.instance_k8s_test28, "_", "-")
   enable_ipv6     = true
   backups         = "disabled"
   ddos_protection = false
