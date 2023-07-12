@@ -1,5 +1,13 @@
 terraform {
   required_version = "~> 1.5.0"
+
+  cloud {
+    organization = "honahuku"
+    workspaces {
+      name = "manifest"
+    }
+  }
+
   required_providers {
     vultr = {
       source  = "vultr/vultr"
@@ -22,13 +30,6 @@ terraform {
     tls = {
       source  = "hashicorp/tls"
       version = "~> 4.0"
-    }
-  }
-
-  backend "remote" {
-    organization = "honahuku"
-    workspaces {
-      name = "manifest"
     }
   }
 }
