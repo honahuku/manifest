@@ -9,38 +9,38 @@ locals {
   instance_k8s_test28 = "k8s_test28"
 }
 
-resource "vultr_instance" "k8s_test26" {
-  plan            = "vc2-1c-2gb"
-  region          = "itm"
-  os_id           = 1743
-  label           = local.instance_k8s_test26
-  hostname        = replace(local.instance_k8s_test26, "_", "-")
-  enable_ipv6     = true
-  backups         = "disabled"
-  ddos_protection = false
-  ssh_key_ids     = ["${vultr_ssh_key.github.id}"]
-}
+# resource "vultr_instance" "k8s_test26" {
+#   plan            = "vc2-1c-2gb"
+#   region          = "itm"
+#   os_id           = 1743
+#   label           = local.instance_k8s_test26
+#   hostname        = replace(local.instance_k8s_test26, "_", "-")
+#   enable_ipv6     = true
+#   backups         = "disabled"
+#   ddos_protection = false
+#   ssh_key_ids     = ["${vultr_ssh_key.github.id}"]
+# }
 
-resource "vultr_instance" "k8s_test27" {
-  plan            = "vc2-1c-2gb"
-  region          = "itm"
-  os_id           = 1743
-  label           = local.instance_k8s_test27
-  hostname        = replace(local.instance_k8s_test27, "_", "-")
-  enable_ipv6     = true
-  backups         = "disabled"
-  ddos_protection = false
-  ssh_key_ids     = ["${vultr_ssh_key.github.id}"]
-}
+# resource "vultr_instance" "k8s_test27" {
+#   plan            = "vc2-1c-2gb"
+#   region          = "itm"
+#   os_id           = 1743
+#   label           = local.instance_k8s_test27
+#   hostname        = replace(local.instance_k8s_test27, "_", "-")
+#   enable_ipv6     = true
+#   backups         = "disabled"
+#   ddos_protection = false
+#   ssh_key_ids     = ["${vultr_ssh_key.github.id}"]
+# }
 
-resource "vultr_instance" "k8s_test28" {
-  plan            = "vc2-1c-2gb"
-  region          = "itm"
-  os_id           = 1743
-  label           = local.instance_k8s_test28
-  hostname        = replace(local.instance_k8s_test28, "_", "-")
-  enable_ipv6     = true
-  backups         = "disabled"
-  ddos_protection = false
-  ssh_key_ids     = ["${vultr_ssh_key.github.id}"]
-}
+# resource "vultr_instance" "k8s_test28" {
+#   plan            = "vc2-1c-2gb"
+#   region          = "itm"
+#   os_id           = 1743
+#   label           = local.instance_k8s_test28
+#   hostname        = replace(local.instance_k8s_test28, "_", "-")
+#   enable_ipv6     = true
+#   backups         = "disabled"
+#   ddos_protection = false
+#   ssh_key_ids     = ["${vultr_ssh_key.github.id}"]
+# }
