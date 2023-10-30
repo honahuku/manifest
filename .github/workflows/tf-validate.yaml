@@ -22,7 +22,7 @@ jobs:
         with:
           fail_on_error: true
 
-      - uses: hashicorp/setup-terraform@v2
+      - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.3.3
       - name: Terraform fmt
