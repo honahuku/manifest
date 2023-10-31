@@ -4,7 +4,7 @@
 # curl "https://api.vultr.com/v2/os" -X GET | jq > os.json
 
 locals {
-  pt01 = "pt01"
+  pt01                = "pt01"
   instance_k8s_test27 = "k8s_test27"
   instance_k8s_test28 = "k8s_test28"
 }
