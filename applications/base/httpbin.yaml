@@ -14,5 +14,5 @@ spec:
     namespace: httpbin
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: false
+      selfHeal: false
