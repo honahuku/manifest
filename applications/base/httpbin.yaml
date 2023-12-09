@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/honahuku/manifest.git
     targetRevision: main
-    path: httpbin
+    path: httpbin/overlays/$(ENV)
   destination:
     server: https://kubernetes.default.svc
     namespace: httpbin

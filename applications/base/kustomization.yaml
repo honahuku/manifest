@@ -1,6 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master-local/all.json
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: argocd
 
 resources:
-- httpbin.yaml
+  - httpbin.yaml
+  - applications.yaml
+
+configurations:
+  - kustomizeconfig.yaml
+
+vars:
+  - fieldref:
+      fieldPath: metadata.labels.env
+    name: ENV
+    objref:
+      apiVersion: argoproj.io/v1alpha1
+      kind: Application
+      name: httpbin
