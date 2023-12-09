@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: httpbin
 
 resources:
-- base/deployment.yaml
-- base/namespace.yaml
-- base/service.yaml
+- deployment.yaml
+- namespace.yaml
+- service.yaml
