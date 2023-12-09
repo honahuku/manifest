@@ -4,8 +4,9 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-  - httpbin.yaml
   - applications.yaml
+  - connect.yaml
+  - httpbin.yaml
 
 configurations:
   - kustomizeconfig.yaml

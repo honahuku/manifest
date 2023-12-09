@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master-local/all.json
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: connect
+
+resources:
+  - namespace.yaml
+
+helmCharts:
+  - name: connect
+    namespace: connect
+    includeCRDs: false
+    valuesInline:
+      operator:
+        create: true
+    releaseName: connect
+    version: 1.14.0
+    repo: https://1password.github.io/connect-helm-charts

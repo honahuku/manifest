@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: connect
+  namespace: connect
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/honahuku/manifest.git
+    targetRevision: main
+    path: connect/overlays/$(ENV)
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: connect
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

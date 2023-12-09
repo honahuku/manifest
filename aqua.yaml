@@ -17,3 +17,4 @@ packages:
   - name: ahmetb/kubectx@v0.9.5
   - name: argoproj/argo-cd@v2.8.4
   - name: kubernetes-sigs/kustomize@kustomize/v5.3.0
+  - name: helm/helm@v3.13.2
