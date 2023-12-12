@@ -6,3 +6,7 @@ ArgoCDはすでに立ち上がっているとして、以下を実行
 ```bash
 kustomize build applications/overlays/$(ENV)
 ```
+
+## kompose による manifest の自動生成
+[kubernetes/kompose](https://github.com/kubernetes/kompose) というツールがあります。  
+これは docker-compose ファイルをk8sのマニフェストに変換してくれるやつです  
