@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: datadog
+  namespace: datadog
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/honahuku/manifest.git
+    targetRevision: main
+    path: datadog/overlays/$(ENV)
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: datadog
