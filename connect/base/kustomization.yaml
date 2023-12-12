@@ -9,7 +9,7 @@ resources:
 helmCharts:
   - name: connect
     namespace: connect
-    includeCRDs: false
+    includeCRDs: true
     valuesInline:
       operator:
         create: true

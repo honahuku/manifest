@@ -11,7 +11,7 @@ resources:
 helmCharts:
   - name: datadog
     namespace: datadog
-    includeCRDs: false
+    includeCRDs: true
     valuesInline:
       operator:
         create: true
