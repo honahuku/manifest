@@ -11,12 +11,16 @@ resources:
 helmCharts:
   - name: datadog
     namespace: datadog
-    includeCRDs: true
-    valuesInline:
-      operator:
-        create: true
-      connect:
-        replicas: 3
+    includeCRDs: false
     releaseName: datadog
     version: 3.49.7
+    repo: https://helm.datadoghq.com
+  - name: datadog-crds
+    namespace: datadog
+    includeCRDs: true
+    valuesInline:
+      crds:
+        datadogAgents: true
+    releaseName: datadog
+    version: 1.3.0
     repo: https://helm.datadoghq.com
