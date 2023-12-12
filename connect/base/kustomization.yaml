@@ -5,6 +5,8 @@ namespace: connect
 
 resources:
   - namespace.yaml
+  - onepassword-token.yaml
+  - op-credentials.yaml
 
 helmCharts:
   - name: connect
@@ -13,8 +15,11 @@ helmCharts:
     valuesInline:
       operator:
         create: true
+        # token:
+        #   value: ""
       connect:
         replicas: 3
+        # credentials: 1password-credentials.json
     releaseName: connect
     version: 1.14.0
     repo: https://1password.github.io/connect-helm-charts
