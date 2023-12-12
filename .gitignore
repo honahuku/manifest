@@ -1,3 +1,4 @@
 secret/*
 *.terraform
 **/charts/**
+.env
