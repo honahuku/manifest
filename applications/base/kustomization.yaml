@@ -5,7 +5,6 @@ namespace: argocd
 
 resources:
   - applications.yaml
-  - argocd-settings.yaml
   - connect.yaml
   - httpbin.yaml
 
