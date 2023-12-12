@@ -13,6 +13,8 @@ helmCharts:
     valuesInline:
       operator:
         create: true
+      connect:
+        replicas: 3
     releaseName: connect
     version: 1.14.0
     repo: https://1password.github.io/connect-helm-charts
