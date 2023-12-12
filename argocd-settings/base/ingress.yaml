@@ -16,6 +16,7 @@ spec:
                 name: argocd-server
                 port:
                   number: 80
-  # tls:
-  #   - hosts:
-  #       - argocd.honahuku.com
+  tls:
+    - hosts:
+        - argocd.honahuku.com
+      secretName: argocd-server-tls
