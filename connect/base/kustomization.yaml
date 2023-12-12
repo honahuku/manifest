@@ -5,8 +5,6 @@ namespace: connect
 
 resources:
   - namespace.yaml
-  - onepassword-token.yaml
-  - op-credentials.yaml
 
 helmCharts:
   - name: connect
