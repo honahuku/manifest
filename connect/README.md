@@ -12,7 +12,9 @@ kubectl create secret generic op-credentials \
 --from-file=1password-credentials.json=1password-credentials.json \
 --dry-run=client -o yaml | kubectl apply -f -
 
-kubectl create secret generic onepassword-token -n connect \
---from-literal=token="OP_CONNECT_TOKEN" | kubectl apply -f -
+kubectl create secret generic onepassword-token \
+-n connect \
+--from-literal=token="$OP_CONNECT_TOKEN" \
+--dry-run=client -o yaml | kubectl apply -f -
 ```
 
