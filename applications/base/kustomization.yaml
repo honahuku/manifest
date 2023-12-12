@@ -8,6 +8,7 @@ resources:
   - argocd-settings.yaml
   - connect.yaml
   - httpbin.yaml
+  - ingress-nginx.yaml
 
 configurations:
   - kustomizeconfig.yaml
