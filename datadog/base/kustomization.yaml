@@ -4,6 +4,8 @@ kind: Kustomization
 namespace: datadog
 
 resources:
+  - 1password-item.yaml
+  - datadog-agent.yaml
   - namespace.yaml
 
 helmCharts:
