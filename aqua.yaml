@@ -18,3 +18,4 @@ packages:
   - name: argoproj/argo-cd@v2.8.4
   - name: kubernetes-sigs/kustomize@kustomize/v5.3.0
   - name: helm/helm@v3.13.2
+  - name: kubernetes/kompose@v1.31.2
