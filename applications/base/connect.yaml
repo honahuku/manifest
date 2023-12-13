@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: connect
-  namespace: connect
+  namespace: argocd
 spec:
   project: default
   source:
@@ -21,4 +21,4 @@ spec:
             name: "onepassword-token"
   destination:
     server: https://kubernetes.default.svc
-    namespace: connect
+    namespace: default
