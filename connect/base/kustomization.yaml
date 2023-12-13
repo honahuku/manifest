@@ -16,7 +16,7 @@ helmCharts:
         # token:
         #   value: ""
       connect:
-        replicas: 3
+        replicas: 1
         # credentials: 1password-credentials.json
     releaseName: connect
     version: 1.14.0
