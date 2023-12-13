@@ -11,8 +11,6 @@ metadata:
       parameters:
         - name: operator.create
           value: "true"
-        - name: operator.token.value
-          value: OP_CONNECT_TOKEN
   destination:
     server: https://kubernetes.default.svc
     namespace: connect
