@@ -8,7 +8,7 @@ resources:
 
 helmCharts:
   - name: connect
-    namespace: connect
+    # namespace: connect
     includeCRDs: true
     valuesInline:
       operator:
@@ -18,6 +18,6 @@ helmCharts:
       connect:
         replicas: 1
         # credentials: 1password-credentials.json
-    releaseName: connect
+    # releaseName: connect
     version: 1.14.0
     repo: https://1password.github.io/connect-helm-charts

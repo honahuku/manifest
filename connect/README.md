@@ -14,6 +14,8 @@ kubectl create secret generic op-credentials \
 
 export ENCODED_TOKEN=$(echo $OP_CONNECT_TOKEN | base64 | tr -d '\n')
 ENCODED_TOKEN="$ENCODED_TOKEN" yq e '.data.token = env(ENCODED_TOKEN)' onepassword-token.yaml | kubectl apply -f -
+
+kubectl create secret generic onepassword-token --from-literal=token="$OP_CONNECT_TOKEN" --dry-run=client -o yaml | kubectl apply -f -
 ```
 
 connect apiの検証
