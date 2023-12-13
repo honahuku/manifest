@@ -23,7 +23,9 @@ connect apiの検証
 curl \
 -H "Accept: application/json" \
 -H "Authorization: Bearer $OP_CONNECT_TOKEN" \
-http://localhost:8080/v1/vaults
+http://localhost:8081/v1/vaults |jq
+
+curl http://localhost:8081/health | jq
 
 # 8080 ポートはargoが使ってるかもしれないので適宜8081とかを使う
 ```

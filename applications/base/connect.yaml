@@ -3,12 +3,16 @@ kind: Application
 metadata:
   name: connect
   namespace: connect
-spec:
-  project: default
   source:
-    repoURL: https://github.com/honahuku/manifest.git
-    targetRevision: main
-    path: connect/overlays/$(ENV)
+    repoURL: "https://1password.github.io/connect-helm-charts/"
+    targetRevision: HEAD
+    chart: connect
+    helm:
+      parameters:
+        - name: operator.create
+          value: "true"
+        - name: operator.token.value
+          value: OP_CONNECT_TOKEN
   destination:
     server: https://kubernetes.default.svc
     namespace: connect
