@@ -6,13 +6,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://1password.github.io/connect-helm-charts/"
-    targetRevision: HEAD
     chart: connect
+    repoURL: https://1password.github.io/connect-helm-charts/
+    targetRevision: 1.14.0
     helm:
-      parameters:
-        - name: operator.create
-          value: "true"
+      valuesObject:
+        operator:
+          create: true
   destination:
     server: https://kubernetes.default.svc
     namespace: connect
