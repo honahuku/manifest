@@ -6,7 +6,8 @@ namespace: argocd
 resources:
   - applications.yaml
   - argocd-settings.yaml
-  - connect.yaml
+  # argo 経由でのインストールがうまくいかないので一旦helmのcliから入れる
+  # - connect.yaml
   - datadog.yaml
   - httpbin.yaml
   - ingress-nginx.yaml
