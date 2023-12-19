@@ -2,13 +2,23 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: connect
-  namespace: connect
+  namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/honahuku/manifest.git
-    targetRevision: main
-    path: connect/overlays/$(ENV)
+    chart: connect
+    repoURL: https://1password.github.io/connect-helm-charts/
+    targetRevision: 1.14.0
+    helm:
+      valuesObject:
+        connect:
+          credentialsKey: "1password-credentials.json"
+          credentialsName: "op-credentials"
+        operator:
+          create: true
+          token:
+            key: token
+            name: "onepassword-token"
   destination:
     server: https://kubernetes.default.svc
-    namespace: connect
+    namespace: default

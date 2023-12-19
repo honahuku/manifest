@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress-nginx
+  name: datadog
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/honahuku/manifest.git
     targetRevision: main
-    path: ingress-nginx/overlays/$(ENV)
+    path: datadog/overlays/$(ENV)
   destination:
     server: https://kubernetes.default.svc
-    namespace: ingress-nginx
+    namespace: datadog
