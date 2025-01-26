@@ -4,7 +4,7 @@ This repository contains manifest files and config files for each application th
 ## bootstrap
 ArgoCDはすでに立ち上がっているとして、以下を実行  
 ```bash
-kustomize build applications/overlays/$(ENV)
+kustomize build applications/overlays/production
 ```
 
 ## kompose による manifest の自動生成
