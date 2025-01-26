@@ -4,7 +4,19 @@ This repository contains manifest files and config files for each application th
 ## bootstrap
 ArgoCDはすでに立ち上がっているとして、以下を実行  
 ```bash
-kustomize build applications/overlays/$(ENV)
+kustomize build argocd/overlays/production/ | kubectl apply -f -
+kustomize build applications/overlays/production/ | kubectl apply -f -
+
+# argocd の初期パスワード取得
+argocd admin initial-password -n argocd
+```
+
+## kind による検証環境構築
+```bash
+kind create cluster
+
+# 壊れたら
+kind delete cluster
 ```
 
 ## kompose による manifest の自動生成
