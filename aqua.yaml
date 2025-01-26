@@ -1,3 +1,4 @@
+---
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/aqua-yaml.json
 # aqua - Declarative CLI Version Manager
 # https://aquaproj.github.io/
@@ -7,8 +8,8 @@
 #   supported_envs:
 #   - all
 registries:
-  - type: standard
-    ref: v4.55.0 # renovate: depName=aquaproj/aqua-registry
+- type: standard
+  ref: v4.300.2  # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: hashicorp/terraform@v1.5.7
   - name: koalaman/shellcheck@v0.9.0
@@ -20,3 +21,5 @@ packages:
   - name: helm/helm@v3.13.2
   - name: kubernetes/kompose@v1.31.2
   - name: mvdan/sh@v3.7.0
+  - name: kubernetes/minikube@v1.35.0
+  - name: k0sproject/k0sctl@v0.22.0
