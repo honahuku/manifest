@@ -10,3 +10,4 @@ spec:
     path: applications/overlays/$(ENV)
   destination:
     server: https://kubernetes.default.svc
+    namespace: argocd
