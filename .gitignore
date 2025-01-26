@@ -2,3 +2,4 @@ secret/*
 *.terraform
 **/charts/**
 .env
+out.yaml
