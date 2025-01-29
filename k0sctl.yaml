@@ -1,0 +1,12 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: chiyoda
+  user: honahuku
+spec:
+  hosts:
+    - ssh:
+        address: chiyoda
+        user: honahuku
+      role: controller+worker
+      noTaints: true

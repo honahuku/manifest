@@ -19,6 +19,11 @@ kind create cluster
 kind delete cluster
 ```
 
-## kompose による manifest の自動生成
-[kubernetes/kompose](https://github.com/kubernetes/kompose) というツールがあります。  
-これは docker-compose ファイルをk8sのマニフェストに変換してくれるやつです  
+## k0sctl によるクラスタ設定の反映
+```bash
+k0sctl apply --config k0sctl.yaml
+k0sctl kubeconfig > kubeconfig
+```
+
+### reset
+https://docs.k0sproject.io/head/reset/
