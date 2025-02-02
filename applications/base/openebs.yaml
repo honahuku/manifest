@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openebs
+spec:
+  project: default
+  source:
+    repoURL: https://openebs.github.io/charts
+    targetRevision: 4.1.3
+    chart: openebs
+    helm:
+      values: |
+        localprovisioner:
+          enabled: true
+        nfs-provisioner:
+          enabled: false
+        jiva:
+          enabled: false
+        cstor:
+          enabled: false
+        ndm:
+          enabled: false
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
