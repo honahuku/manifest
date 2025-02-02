@@ -7,7 +7,7 @@ namespace: argocd
 resources:
   - applications.yaml
   - argocd.yaml
-  - openebs.yaml
+  - longhorn.yaml
 
 labels:
   - includeSelectors: true
