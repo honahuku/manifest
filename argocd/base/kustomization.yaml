@@ -6,6 +6,7 @@ resources:
   # renovate: datasource=github-releases depName=argo-cd packageName=argoproj/argo-cd
   - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
   - namespace.yaml
+  - repo-secrets.yaml
 
 labels:
   - includeSelectors: true
