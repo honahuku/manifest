@@ -3,5 +3,5 @@
 [kubernetes/kompose](https://github.com/kubernetes/kompose) によって compose.yaml を manifest に変換できます。  
 
 ```bash
-curl -fsSL https://github.com/nextcloud/all-in-one/raw/main/compose.yaml | kompose convert -f /dev/stdin
+curl -fsSL https://raw.githubusercontent.com/nextcloud/all-in-one/refs/heads/main/manual-install/latest.yml | kompose convert -f /dev/stdin
 ```
