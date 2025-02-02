@@ -6,6 +6,7 @@ ArgoCDはすでに立ち上がっているとして、以下を実行
 ```bash
 kustomize build argocd/overlays/production/ | kubectl apply -f -
 kustomize build applications/overlays/production/ | kubectl apply -f -
+kustomize build openebs/overlays/production/ | kubectl apply -f -
 
 # argocd の初期パスワード取得
 argocd admin initial-password -n argocd
