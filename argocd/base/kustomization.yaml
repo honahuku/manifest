@@ -12,3 +12,9 @@ labels:
   - includeSelectors: true
     pairs:
       env: production
+
+configMapGenerator:
+  - behavior: merge
+    literals:
+      - kustomize.buildOptions=--enable-helm
+    name: argocd-cm
