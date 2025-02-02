@@ -1,13 +1,12 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master-local/all.json
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
-namespace: argocd
-
+namespace: nc
 resources:
-  - applications.yaml
-  - argocd.yaml
-  - nextcloud.yaml
+  - deployment.yaml
+  - namespace.yaml
+  - persistentvolumeclaim.yaml
+  - service.yaml
 
 labels:
   - includeSelectors: true
