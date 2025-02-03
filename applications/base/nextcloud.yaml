@@ -13,14 +13,6 @@ spec:
       valuesObject:
         nextcloud:
           host: nextcloud.honahuku.dev
-        image:
-          flavor: fpm
-        nginx:
-          enabled: true
-          config:
-            custom: |-
-              client_max_body_size 10m;
-              fastcgi_read_timeout 120s;
         persistence:
           enabled: true
         metrics:
