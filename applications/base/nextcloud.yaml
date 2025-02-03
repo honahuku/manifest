@@ -13,13 +13,6 @@ spec:
       valuesObject:
         nextcloud:
           host: nextcloud.honahuku.dev
-          configs:
-            previews.config.php: |-
-              <?php
-              $CONFIG = array (
-                'upload_max_filesize' => 200G,
-                'post_max_size' => 200G,
-              );
         image:
           flavor: fpm
         nginx:
