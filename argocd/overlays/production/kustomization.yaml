@@ -4,7 +4,6 @@ kind: Kustomization
 
 resources:
   - ../../base/
-  - cloudflared.yaml
 
 labels:
   - includeSelectors: true
@@ -12,9 +11,6 @@ labels:
       env: production
 
 configMapGenerator:
-  - name: cloudflared
-    files:
-      - config.yaml=cloudflared-config.yaml
   - name: argocd-cmd-params-cm
     behavior: merge
     literals:
