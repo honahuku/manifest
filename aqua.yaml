@@ -9,13 +9,13 @@
 #   - all
 registries:
 - type: standard
-  ref: v4.300.2 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.306.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: koalaman/shellcheck@v0.10.0
   - name: derailed/k9s@v0.32.7
   - name: kubernetes/kubectl@v1.32.1
   - name: ahmetb/kubectx@v0.9.5
-  - name: argoproj/argo-cd@v2.13.3
+  - name: argoproj/argo-cd@v2.13.4
   - name: kubernetes-sigs/kustomize@kustomize/v5.6.0
   - name: helm/helm@v3.17.0
   - name: kubernetes/kompose@v1.35.0
