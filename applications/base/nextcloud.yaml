@@ -16,7 +16,7 @@ spec:
         persistence:
           enabled: true
         metrics:
-          https:true
+          https: true
   destination:
     server: https://kubernetes.default.svc
     namespace: nextcloud
