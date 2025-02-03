@@ -8,11 +8,6 @@ resources:
   - namespace.yaml
   - secret.yaml
 
-labels:
-  - includeSelectors: true
-    pairs:
-      env: production
-
 configMapGenerator:
   - behavior: merge
     literals:

@@ -7,5 +7,6 @@ namespace: argocd
 resources:
   - applications.yaml
   - argocd.yaml
-  - nextcloud.yaml
+  - cloudflared.yaml
   - longhorn.yaml
+  - nextcloud.yaml
