@@ -4,8 +4,18 @@ kind: Kustomization
 
 resources:
   - ../../base/
+  - cloudflared.yaml
 
 labels:
   - includeSelectors: true
     pairs:
       env: production
+
+configMapGenerator:
+  - name: cloudflared
+    files:
+      - config.yaml=cloudflared-config.yaml
+  - name: argocd-cmd-params-cm
+    behavior: merge
+    literals:
+      - server.insecure=true

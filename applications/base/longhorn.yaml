@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: longhorn
+spec:
+  project: default
+  source:
+    repoURL: https://charts.longhorn.io/
+    targetRevision: v1.8.0
+    chart: longhorn
+    helm:
+      # シングルノード向け設定
+      # https://github.com/longhorn/longhorn/discussions/5737
+      # persistence.defaultClassReplicaCount
+      # 3台以下で構成されてるクラスタなら2でいいんじゃん？とのこと
+      # https://longhorn.io/docs/archives/1.4.1/references/settings/#default-replica-count
+      # defaultSettings.replicaSoftAntiAffinity
+      # 多分 node 単位で replica が分かれる設定を無効化するという話だと思う
+      # https://longhorn.io/docs/archives/1.4.1/references/settings/#replica-node-level-soft-anti-affinity
+      values: |
+        preUpgradeChecker:
+          jobEnabled: false
+        persistence:
+          defaultClassReplicaCount: 2
+        defaultSettings:
+          replicaSoftAntiAffinity: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: longhorn-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

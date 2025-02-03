@@ -21,6 +21,9 @@ replacements:
       - select:
           kind: Application
         # spec.source.path が対象
+        reject:
+          - kind: Application
+            name: longhorn
         fieldPaths:
           - spec.source.path
         # delimiter と index で applications/overlays/$(ENV) みたいなときの / で区切られた3つ目を指定

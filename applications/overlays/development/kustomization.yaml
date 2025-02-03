@@ -1,5 +1,29 @@
 # yaml-language-server: $schema=https://json.schemastore.org/kustomization.json
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
   - ../../base/
+
+labels:
+  - includeSelectors: true
+    pairs:
+      env: development
+
+replacements:
+  # replace するデータの取得元
+  - source:
+      kind: Application
+      name: applications
+      fieldPath: metadata.labels.env
+    # replace される manifest
+    targets:
+      - select:
+          kind: Application
+        # spec.source.path が対象
+        fieldPaths:
+          - spec.source.path
+        # delimiter と index で applications/overlays/$(ENV) みたいなときの / で区切られた3つ目を指定
+        options:
+          delimiter: /
+          index: 2
