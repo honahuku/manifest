@@ -15,3 +15,7 @@ configMapGenerator:
   - name: cloudflared
     files:
       - config.yaml=cloudflared-config.yaml
+  - name: argocd-cmd-params-cm
+    behavior: merge
+    literals:
+      - server.insecure=true
