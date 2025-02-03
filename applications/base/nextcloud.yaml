@@ -13,6 +13,37 @@ spec:
       values: |
         nextcloud:
           host: nextcloud.honahuku.dev
+          configs:
+            previews.config.php: |-
+              <?php
+              $CONFIG = array (
+                'enable_previews' => true,
+                'enabledPreviewProviders' => array (
+                  'OC\Preview\Movie',
+                  'OC\Preview\PNG',
+                  'OC\Preview\JPEG',
+                  'OC\Preview\GIF',
+                  'OC\Preview\BMP',
+                  'OC\Preview\XBitmap',
+                  'OC\Preview\MP3',
+                  'OC\Preview\MP4',
+                  'OC\Preview\TXT',
+                  'OC\Preview\MarkDown',
+                  'OC\Preview\PDF'
+                ),
+                'upload_max_filesize' => 200G,
+                'post_max_size' => 200G,
+              );
+        image:
+          flavor: fpm
+        nginx
+          enabled: true
+          config:
+            custom: |-
+              client_max_body_size 200G;
+              fastcgi_read_timeout 600s;
+              proxy_buffering off;
+              proxy_max_temp_file_size 2G;
         persistence:
           enabled: true
         metrics:
