@@ -24,6 +24,8 @@ replacements:
         reject:
           - kind: Application
             name: longhorn
+          - kind: Application
+            name: nextcloud
         fieldPaths:
           - spec.source.path
         # delimiter と index で applications/overlays/$(ENV) みたいなときの / で区切られた3つ目を指定
