@@ -19,7 +19,7 @@ ingress:
   - hostname: argocd.honahuku.dev
     service: http://argocd-server.argocd
   - hostname: longhorn.honahuku.dev
-    service: http://longhorn-frontend.longhorn-system:80
+    service: http://longhorn-ui.longhorn-system:8000
   - hostname: nextcloud.honahuku.dev
     service: http://nextcloud.nextcloud:8080
   # This rule sends traffic to the built-in hello-world HTTP server. This can help debug connectivity
