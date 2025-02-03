@@ -17,9 +17,12 @@ spec:
           enabled: true
         metrics:
           https: true
-          replicaCount: 15
         phpClientHttpsFix:
           enabled: true
+        hpa:
+          enabled: true
+          minPods: 15
+          maxPods: 20
   destination:
     server: https://kubernetes.default.svc
     namespace: nextcloud
