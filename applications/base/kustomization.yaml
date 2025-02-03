@@ -9,8 +9,3 @@ resources:
   - argocd.yaml
   - nextcloud.yaml
   - longhorn.yaml
-
-labels:
-  - includeSelectors: true
-    pairs:
-      env: production
