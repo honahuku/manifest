@@ -22,10 +22,10 @@ spec:
         # cloudflared will actually do. This file is created by a ConfigMap
         # below.
         # https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/troubleshoot-tunnels/common-errors/#i-see-an-error-x509-certificate-signed-by-unknown-authority
+        - --no-tls-verify
         - --config
         - /etc/cloudflared/config/config.yaml
         - run
-        - --no-tls-verify
         livenessProbe:
           httpGet:
             # Cloudflared has a /ready endpoint which returns 200 if and only if
