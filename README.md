@@ -38,8 +38,9 @@ k0sctl apply --config k0sctl.yaml
 k0sctl kubeconfig > kubeconfig
 ```
 
-#### reset
-https://docs.k0sproject.io/head/reset/
+#### k0sctl によるクラスタ reset
+!! PVC 含めすべてのデータが吹き飛びます !!
+https://docs.k0sproject.io/head/reset/#reset-a-k0s-cluster-remotely-using-k0sctl
 
 ## stg クラスタ
 

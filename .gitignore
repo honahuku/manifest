@@ -6,3 +6,4 @@ secret/*
 **/prd.yaml
 **/*.key*
 **/*keys.*
+kubeconfig
