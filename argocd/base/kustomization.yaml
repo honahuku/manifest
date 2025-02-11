@@ -13,6 +13,9 @@ configMapGenerator:
     behavior: merge
     literals:
       - kustomize.buildOptions=--enable-helm
+      # WEB UI でターミナルを実行できるようにする
+      # https://argo-cd.readthedocs.io/en/stable/operator-manual/web_based_terminal/
+      - exec.enabled=true
   - name: argocd-cmd-params-cm
     behavior: merge
     literals:
