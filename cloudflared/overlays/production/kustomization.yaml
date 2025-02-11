@@ -5,9 +5,6 @@ kind: Kustomization
 resources:
   - ../../base/
 
-patches:
-  - path: secret.yaml
-
 labels:
   - includeSelectors: true
     pairs:
