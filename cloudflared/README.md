@@ -11,6 +11,6 @@ cloudflared tunnel create kind-argocd-tunnel
 kubectl create secret -n cloudflared generic argocd-tunnel-credentials \
 --from-file=credentials.json=HOGE.json
 
-# argocd.stg.honahuku.dev を追加
-cloudflared tunnel route dns kind-argocd-tunnel argocd.stg
+# argocd-stg.honahuku.dev を追加
+cloudflared tunnel route dns kind-argocd-tunnel longhorn-stg
 ```
