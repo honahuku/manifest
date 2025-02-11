@@ -9,4 +9,5 @@ resources:
   - argocd.yaml
   - cloudflared.yaml
   - longhorn.yaml
+  - mariadb.yaml
   - nextcloud.yaml

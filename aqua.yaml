@@ -24,3 +24,4 @@ packages:
   - name: k0sproject/k0sctl@v0.22.0
   - name: kubernetes-sigs/kind@v0.26.0
   - name: cloudflare/cloudflared@2025.1.1
+  - name: getsops/sops@v3.9.4

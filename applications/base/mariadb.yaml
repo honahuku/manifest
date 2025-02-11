@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mariadb
+spec:
+  project: default
+  source:
+    repoURL: https://charts.bitnami.com/bitnami
+    chart: mariadb
+    targetRevision: 20.2.2
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mariadb
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
