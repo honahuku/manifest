@@ -27,3 +27,6 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: nextcloud
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
