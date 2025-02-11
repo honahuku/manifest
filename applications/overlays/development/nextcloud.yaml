@@ -3,11 +3,14 @@ kind: Application
 metadata:
   name: nextcloud
 spec:
+  project: default
   source:
     helm:
       valuesObject:
+        # internalDatabase:
+        #   enabled: false
         nextcloud:
-          host: nextcloud.honahuku.dev
+          host: nextcloud-stg.honahuku.dev
         persistence:
           enabled: true
         metrics:
@@ -15,6 +18,5 @@ spec:
         phpClientHttpsFix:
           enabled: true
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
