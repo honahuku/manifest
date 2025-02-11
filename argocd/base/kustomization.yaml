@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: argocd
 resources:
   # renovate: datasource=github-releases depName=argo-cd packageName=argoproj/argo-cd
-  - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/v2.13.4/manifests/install.yaml
   - namespace.yaml
   - secret.yaml
 
