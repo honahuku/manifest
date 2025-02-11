@@ -9,3 +9,8 @@ labels:
   - includeSelectors: true
     pairs:
       env: production
+
+configMapGenerator:
+  - name: cloudflared
+    files:
+      - config.yaml=cloudflared-config.yaml
