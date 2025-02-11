@@ -8,6 +8,10 @@ resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.13.4/manifests/install.yaml
   - namespace.yaml
 
+patches:
+  - path: argocd-repo-server.yaml
+  - path: argocd-server.yaml
+
 configMapGenerator:
   - name: argocd-cm
     behavior: merge
