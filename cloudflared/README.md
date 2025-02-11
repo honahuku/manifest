@@ -13,6 +13,7 @@ kubectl create secret -n cloudflared generic argocd-tunnel-credentials \
   --dry-run=client -o yaml > cloudflared/overlays/PIYO/secret.yaml
 
 # argocd-stg.honahuku.dev を追加
+# コネクタIDではなくトンネルIDがCNAMEレコードとして登録される
 cloudflared tunnel route dns kind-argocd-tunnel longhorn-stg
 ```
 
