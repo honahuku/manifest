@@ -15,12 +15,3 @@ kubectl create secret -n cloudflared generic argocd-tunnel-credentials \
 # argocd-stg.honahuku.dev を追加
 cloudflared tunnel route dns kind-argocd-tunnel longhorn-stg
 ```
-
-### secret のコミットについて
-```bash
-# 暗号化
-sops -e -i cloudflared/overlays/development/secret.yaml
-
-# 複合
-sops -d -i cloudflared/overlays/development/secret.yaml
-```
