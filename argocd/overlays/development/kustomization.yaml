@@ -15,7 +15,8 @@ configMapGenerator:
     behavior: merge
     literals:
       - url=https://argocd-stg.honahuku.dev
+      # stg か prd かを ArgoCD の WEB UI のバナーに表示するやつ
       # https://argo-cd.readthedocs.io/en/stable/operator-manual/custom-styles/#banners
-      - ui.bannercontent="Banner message HOGEHOGE"
+      - ui.bannercontent="ここはステージング環境です"
       - ui.bannerpermanent="true"
-      - ui.bannerposition="bottom"
+      - ui.bannerposition="top"
