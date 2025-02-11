@@ -14,9 +14,11 @@ configMapGenerator:
   - name: argocd-cm
     behavior: merge
     literals:
+      # SSO を構成する際に使う ArgoCD の外部アドレス
+      # ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/argocd-cm-yaml/
       - url=https://argocd-stg.honahuku.dev
       # stg か prd かを ArgoCD の WEB UI のバナーに表示するやつ
-      # https://argo-cd.readthedocs.io/en/stable/operator-manual/custom-styles/#banners
+      # ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/custom-styles/#banners
       - ui.bannercontent="ここはステージング環境です"
       - ui.bannerpermanent="true"
       - ui.bannerposition="top"
