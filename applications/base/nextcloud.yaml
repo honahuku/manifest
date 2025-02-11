@@ -2,28 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nextcloud
-  namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://nextcloud.github.io/helm/
     chart: nextcloud
     targetRevision: 6.6.3
-    helm:
-      valuesObject:
-        nextcloud:
-          host: nextcloud.honahuku.dev
-        persistence:
-          enabled: true
-        metrics:
-          https: true
-        phpClientHttpsFix:
-          enabled: true
-        # FIXME: PDB が設定されてないのでデプロイ時に pod の入れ替わり分瞬停してしまう。同じ ns で別の application で PDB を宣言してみる
-        # hpa:
-        #   enabled: true
-        #   minPods: 7
-        #   maxPods: 10
   destination:
     server: https://kubernetes.default.svc
     namespace: nextcloud

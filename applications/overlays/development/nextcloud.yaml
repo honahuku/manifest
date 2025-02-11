@@ -7,7 +7,7 @@ spec:
     helm:
       valuesObject:
         nextcloud:
-          host: nextcloud.honahuku.dev
+          host: nextcloud-stg.honahuku.dev
         persistence:
           enabled: true
         metrics:
@@ -15,6 +15,5 @@ spec:
         phpClientHttpsFix:
           enabled: true
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
