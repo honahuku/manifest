@@ -5,9 +5,6 @@ kind: Kustomization
 resources:
   - ../../base/
 
-patches:
-  - path: secret.yaml
-
 labels:
   - includeSelectors: true
     pairs:
@@ -18,3 +15,6 @@ configMapGenerator:
     behavior: merge
     files:
       - config.yaml=cloudflared-config.yaml
+
+generators:
+  - ./ksops-config.yaml

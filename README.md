@@ -22,10 +22,10 @@ argocd admin initial-password -n argocd
 ```bash
 
 # 暗号化
-sops -e -i cloudflared/overlays/development/secret.yaml
+sops -e -i cloudflared/overlays/PIYO/secret.yaml
 
 # 複合
-sops -d -i cloudflared/overlays/development/secret.yaml
+sops -d -i cloudflared/overlays/PIYO/secret.yaml
 ```
 
 

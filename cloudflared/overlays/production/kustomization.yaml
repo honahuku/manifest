@@ -18,3 +18,6 @@ configMapGenerator:
     behavior: merge
     files:
       - config.yaml=cloudflared-config.yaml
+
+generators:
+  - ./ksops-config.yaml
