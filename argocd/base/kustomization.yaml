@@ -16,7 +16,7 @@ configMapGenerator:
   - name: argocd-cm
     behavior: merge
     literals:
-      - kustomize.buildOptions=--enable-helm
+      - kustomize.buildOptions="--enable-helm --enable-alpha-plugins --enable-exec"
       # WEB UI でターミナルを実行できるようにする
       # https://argo-cd.readthedocs.io/en/stable/operator-manual/web_based_terminal/
       - exec.enabled=true

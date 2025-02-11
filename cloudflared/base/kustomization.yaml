@@ -16,3 +16,6 @@ labels:
 configMapGenerator:
   - name: cloudflared
     behavior: create
+
+secretGenerator:
+- name: argocd-tunnel-credentials
