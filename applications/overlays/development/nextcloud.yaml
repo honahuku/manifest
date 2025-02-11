@@ -3,9 +3,12 @@ kind: Application
 metadata:
   name: nextcloud
 spec:
+  project: default
   source:
     helm:
       valuesObject:
+        # internalDatabase:
+        #   enabled: false
         nextcloud:
           host: nextcloud-stg.honahuku.dev
         persistence:
