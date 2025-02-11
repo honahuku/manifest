@@ -32,7 +32,7 @@ spec:
           command: ["/bin/sh", "-c"]
           args:
             - echo "Installing SOPS...";
-              curl -L https://github.com/getsops/sops/releases/download/v3.9.4/sops-v3.9.4.linux.amd64 -o sops;
+              curl --retry 3 --retry-delay 5 --retry-max-time 20 --retry-connrefused -L https://github.com/getsops/sops/releases/download/v3.9.4/sops-v3.9.4.linux.amd64 -o sops;
               chmod +x sops;
               mv sops /custom-tools/;
               echo "Done.";
