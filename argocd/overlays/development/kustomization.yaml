@@ -9,3 +9,13 @@ labels:
   - includeSelectors: true
     pairs:
       env: development
+
+configMapGenerator:
+  - name: argocd-cm
+    behavior: merge
+    literals:
+      - url=https://argocd-stg.honahuku.dev
+      # https://argo-cd.readthedocs.io/en/stable/operator-manual/custom-styles/#banners
+      - ui.bannercontent="Banner message HOGEHOGE"
+      - ui.bannerpermanent="true"
+      - ui.bannerposition="bottom"
