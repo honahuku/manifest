@@ -9,7 +9,11 @@ resources:
   - secret.yaml
 
 configMapGenerator:
-  - behavior: merge
+  - name: argocd-cm
+    behavior: merge
     literals:
       - kustomize.buildOptions=--enable-helm
-    name: argocd-cm
+  - name: argocd-cmd-params-cm
+    behavior: merge
+    literals:
+      - server.insecure=true
