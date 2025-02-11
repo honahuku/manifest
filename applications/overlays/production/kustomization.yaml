@@ -5,6 +5,13 @@ kind: Kustomization
 resources:
   - ../../base/
 
+patches:
+  - path: applications.yaml
+  - path: argocd.yaml
+  - path: cloudflared.yaml
+  - path: longhorn.yaml
+  - path: nextcloud.yaml
+
 labels:
   - includeSelectors: true
     pairs:

@@ -1,4 +1,6 @@
 secret/*
 **/charts/**
 .env
-out.yaml
+**/out.yaml
+**/stg.yaml
+**/prd.yaml

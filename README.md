@@ -1,7 +1,8 @@
 # manifest
 This repository contains manifest files and config files for each application that will be deployed to Honahuku's home k8s cluster.
 
-## bootstrap
+## 本番クラスタ
+### bootstrap
 ArgoCDはすでに立ち上がっているとして、以下を実行  
 ```bash
 kustomize build argocd/overlays/production/ | kubectl apply -f -
@@ -12,7 +13,18 @@ kustomize build cloudflared/overlays/production/ | kubectl apply -f -
 argocd admin initial-password -n argocd
 ```
 
-## kind による検証環境構築
+### k0sctl によるクラスタ設定の反映
+```bash
+k0sctl apply --config k0sctl.yaml
+k0sctl kubeconfig > kubeconfig
+```
+
+#### reset
+https://docs.k0sproject.io/head/reset/
+
+## stg クラスタ
+
+### kind による検証環境構築
 ```bash
 kind create cluster
 
@@ -20,11 +32,11 @@ kind create cluster
 kind delete cluster
 ```
 
-## k0sctl によるクラスタ設定の反映
+### argocd の stg 向け手動デプロイ
 ```bash
-k0sctl apply --config k0sctl.yaml
-k0sctl kubeconfig > kubeconfig
-```
+kustomize build argocd/overlays/development/ | kubectl apply -f -
+kustomize build applications/overlays/development/ | kubectl apply -f -
 
-### reset
-https://docs.k0sproject.io/head/reset/
+# argocd の初期パスワード取得
+argocd admin initial-password -n argocd
+```
