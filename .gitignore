@@ -4,3 +4,4 @@ secret/*
 **/out.yaml
 **/stg.yaml
 **/prd.yaml
+**/*.key*
