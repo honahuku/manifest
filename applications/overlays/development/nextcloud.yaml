@@ -3,12 +3,15 @@ kind: Application
 metadata:
   name: nextcloud
 spec:
-  project: default
   source:
     helm:
       valuesObject:
+        # # https://github.com/nextcloud/helm/tree/main/charts/nextcloud#database-configurations
         # internalDatabase:
         #   enabled: false
+        # externalDatabase:
+        #   enabled: true
+        #   type: mysql
         nextcloud:
           host: nextcloud-stg.honahuku.dev
         persistence:
@@ -17,6 +20,3 @@ spec:
           https: true
         phpClientHttpsFix:
           enabled: true
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
