@@ -8,10 +8,6 @@ ArgoCDはすでに立ち上がっているとして、以下を実行
 kustomize build argocd/overlays/production/ | kubectl apply -f -
 kustomize build applications/overlays/production/ | kubectl apply -f -
 
-# クラスタにsecret複合用の鍵を登録する
-# age.key は 1password に入ってるはず
-kubectl create secret generic sops-age-key -n argocd --from-file=age.key
-
 # argocd の初期パスワード取得
 argocd admin initial-password -n argocd
 ```
@@ -20,11 +16,18 @@ argocd admin initial-password -n argocd
  `kustomize build` するときは [kustomize-sops](https://github.com/viaduct-ai/kustomize-sops) という kustomize のプラグイン経由で sops を実行します
 
 ```bash
+# 鍵生成
+# この後使う sops はデフォルトで ~/.config/sops/age/keys.txt を見に行くのでそこに生成しておく
+age-keygen -o ~/.config/sops/age/
 
-# 暗号化
+# クラスタにsecret複合用の鍵を登録する
+# keys.txt は 1password に入ってるはず
+kubectl create secret generic sops-age-key -n argocd --from-file=/home/HOGE_USERNAME/.config/sops/age/keys.txt
+
+# secret の暗号化
 sops -e -i cloudflared/overlays/PIYO/secret.yaml
 
-# 複合
+# secret の複合
 sops -d -i cloudflared/overlays/PIYO/secret.yaml
 ```
 

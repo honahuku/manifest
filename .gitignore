@@ -5,3 +5,4 @@ secret/*
 **/stg.yaml
 **/prd.yaml
 **/*.key*
+**/*keys.*

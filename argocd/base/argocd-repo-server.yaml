@@ -27,6 +27,18 @@ spec:
           volumeMounts:
             - mountPath: /custom-tools
               name: custom-tools
+        - name: install-sops
+          image: alpine/curl:8.12.0
+          command: ["/bin/sh", "-c"]
+          args:
+            - echo "Installing SOPS...";
+              curl -L https://github.com/getsops/sops/releases/download/v3.9.4/sops-v3.9.4.linux.amd64 -o sops;
+              chmod +x sops;
+              mv sops /custom-tools/;
+              echo "Done.";
+          volumeMounts:
+            - mountPath: /custom-tools
+              name: custom-tools
       # 3. Volume mount the custom binary to the bin directory (overriding the existing version)
       containers:
         - name: argocd-repo-server
@@ -37,5 +49,8 @@ spec:
             - mountPath: /usr/local/bin/ksops
               name: custom-tools
               subPath: ksops
+            - mountPath: /usr/local/bin/sops
+              name: custom-tools
+              subPath: sops
             - name: sops-age
-              mountPath: /.config/sops/age
+              mountPath: /home/argocd/.config/sops/age/
