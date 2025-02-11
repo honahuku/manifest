@@ -9,3 +9,9 @@ labels:
   - includeSelectors: true
     pairs:
       env: development
+
+configMapGenerator:
+  - name: argocd-cmd-params-cm
+    behavior: merge
+    literals:
+      - server.insecure=true
