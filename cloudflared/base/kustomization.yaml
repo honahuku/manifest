@@ -10,3 +10,9 @@ labels:
   - includeSelectors: true
     pairs:
       env: production
+
+# configmap に NameSuffixHash をつけるために必要
+# NameSuffixHash で書き換えたい deployment は base にあるので base 側で空の configMap を生成する
+configMapGenerator:
+  - name: cloudflared
+    behavior: create

@@ -12,5 +12,6 @@ labels:
 
 configMapGenerator:
   - name: cloudflared
+    behavior: merge
     files:
       - config.yaml=cloudflared-config.yaml
