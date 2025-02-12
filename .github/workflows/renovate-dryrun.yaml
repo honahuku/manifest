@@ -19,7 +19,7 @@ jobs:
           renovate-config-validator --strict
     if: github.event_name == 'pull_request'
 
-  dry-run-full:
+  full:
     runs-on: ubuntu-latest
     container:
       image: renovate/renovate
@@ -27,10 +27,10 @@ jobs:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
     steps:
       - name: Dry Run Full
-        run: .github/renovate-dryrun.sh full ci
+        run: bash .github/renovate-dryrun.sh full ci
     if: github.event_name == 'pull_request'
 
-  dry-run-extract:
+  extract:
     runs-on: ubuntu-latest
     container:
       image: renovate/renovate
@@ -38,5 +38,5 @@ jobs:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
     steps:
       - name: Dry Run Extract
-        run: .github/renovate-dryrun.sh extract ci
+        run: bash .github/renovate-dryrun.sh extract ci
     if: github.event_name == 'pull_request'
