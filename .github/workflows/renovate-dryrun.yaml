@@ -23,6 +23,7 @@ jobs:
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: full
+      LOG_LEVEL: DEBUG
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
@@ -34,6 +35,7 @@ jobs:
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: extract
+      LOG_LEVEL: DEBUG
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
