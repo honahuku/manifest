@@ -26,7 +26,7 @@ jobs:
       LOG_LEVEL: DEBUG
       RENOVATE_AUTODISCOVER: true
       RENOVATE_AUTODISCOVER_FILTER: "/honahuku/{manifest,infra}"
-      RENOVATE_ENDPOINT: \"$GITHUB_API_URL\" \"$GITHUB_ACTION_REPOSITORY\"
+      RENOVATE_ENDPOINT: "$GITHUB_API_URL/$GITHUB_ACTION_REPOSITORY"
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
@@ -41,7 +41,7 @@ jobs:
       LOG_LEVEL: DEBUG
       RENOVATE_AUTODISCOVER: true
       RENOVATE_AUTODISCOVER_FILTER: "/honahuku/{manifest,infra}"
-      RENOVATE_ENDPOINT: \"$GITHUB_API_URL\" \"$GITHUB_ACTION_REPOSITORY\"
+      RENOVATE_ENDPOINT: "$GITHUB_API_URL/$GITHUB_ACTION_REPOSITORY"
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
