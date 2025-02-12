@@ -20,8 +20,6 @@ jobs:
 
   full:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/renovatebot/renovate:39.168
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: full
@@ -33,8 +31,6 @@ jobs:
 
   extract:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/renovatebot/renovate:39.168
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: extract

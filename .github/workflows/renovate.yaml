@@ -10,13 +10,9 @@ on:
 jobs:
   renovate:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/renovatebot/renovate:39.168
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
     steps:
       - uses: actions/checkout@v4
-      - name: Run Renovate
-        run: >
-          renovate --platform gitlab \
-          --allow-command-templating true
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v41.0.12
