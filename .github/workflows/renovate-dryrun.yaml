@@ -21,29 +21,29 @@ jobs:
   full:
     runs-on: ubuntu-latest
     env:
-      RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: full
       LOG_LEVEL: DEBUG
       RENOVATE_BASE_BRANCHES: ${{ github.head_ref }}
-      RENOVATE_CONFIG_FILE: '.github/renovate.json'
-      RENOVATE_ENDPOINT: 'https://api.github.com/'
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v41.0.12
+        with:
+          configurationFile: '.github/renovate.json'
+          token: ${{ secrets.RENOVATE_TOKEN }}
     if: github.event_name == 'pull_request'
 
   extract:
     runs-on: ubuntu-latest
     env:
-      RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: extract
       LOG_LEVEL: DEBUG
       RENOVATE_BASE_BRANCHES: ${{ github.head_ref }}
-      RENOVATE_CONFIG_FILE: '.github/renovate.json'
-      RENOVATE_ENDPOINT: 'https://api.github.com/'
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v41.0.12
+        with:
+          configurationFile: '.github/renovate.json'
+          token: ${{ secrets.RENOVATE_TOKEN }}
     if: github.event_name == 'pull_request'
