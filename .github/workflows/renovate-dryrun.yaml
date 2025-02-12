@@ -26,6 +26,7 @@ jobs:
       LOG_LEVEL: DEBUG
       RENOVATE_BASE_BRANCHES: ${{ github.head_ref }}
       RENOVATE_CONFIG_FILE: '.github/renovate.json'
+      RENOVATE_ENDPOINT: 'https://github.com/honahuku/manifest.git'
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
@@ -40,6 +41,7 @@ jobs:
       LOG_LEVEL: DEBUG
       RENOVATE_BASE_BRANCHES: ${{ github.head_ref }}
       RENOVATE_CONFIG_FILE: '.github/renovate.json'
+      RENOVATE_ENDPOINT: 'https://github.com/honahuku/manifest.git'
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
