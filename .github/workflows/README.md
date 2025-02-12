@@ -1,1 +1,1 @@
-act -W .github/workflows/tf-validate.yaml
+act -W .github/workflows/yamllint.yaml

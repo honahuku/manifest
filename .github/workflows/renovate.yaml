@@ -1,0 +1,62 @@
+name: Renovate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/renovate.json'
+      - '.github/workflows/renovate*.yml'
+  pull_request:
+    paths:
+      - '.github/renovate.json'
+      - '.github/workflows/renovate*.yml'
+  schedule:
+    - cron: '0 8 * * 2,5'
+  workflow_dispatch:
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    container:
+      image: renovate/renovate
+    env:
+      RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Run Renovate
+        run: >
+          renovate --platform gitlab \
+          --allow-command-templating true
+
+  renovate-validate:
+    runs-on: ubuntu-latest
+    container:
+      image: renovate/renovate
+    steps:
+      - name: Validate Renovate Config
+        run: |
+          set -eux
+          renovate-config-validator --strict
+    if: github.event_name == 'pull_request'
+
+  renovate-dryrun-full:
+    runs-on: ubuntu-latest
+    container:
+      image: renovate/renovate
+    env:
+      RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Dry Run Full
+        run: .github/renovate-dryrun.sh full ci
+    if: github.event_name == 'pull_request'
+
+  renovate-dryrun-extract:
+    runs-on: ubuntu-latest
+    container:
+      image: renovate/renovate
+    env:
+      RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Dry Run Extract
+        run: .github/renovate-dryrun.sh extract ci
+    if: github.event_name == 'pull_request'
