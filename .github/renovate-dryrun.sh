@@ -11,12 +11,6 @@ else
     DRYRUN_MODE=$1
 fi
 
-if [ -z "$2" ]; then
-    EXEC_ENV="local"
-else
-    EXEC_ENV=$2
-fi
-
 set -u
 
 RENOVATE_BIN="npx --yes --package renovate -- renovate"
