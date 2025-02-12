@@ -1,12 +1,6 @@
-name: Renovate
+name: renovate
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/renovate.json'
-      - '.github/workflows/renovate*.yml'
   pull_request:
     paths:
       - '.github/renovate.json'
