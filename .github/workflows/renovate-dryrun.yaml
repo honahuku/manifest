@@ -12,12 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v41.0.12
       - name: Validate Renovate Config
         run: |
           set -eux
-          renovate-config-validator --strict
+          npx --yes --package renovate -- renovate-config-validator --strict
     if: github.event_name == 'pull_request'
 
   full:
