@@ -12,9 +12,7 @@ jobs:
       image: koalaman/shellcheck-alpine@sha256:ee4eb0b3411e6261a8aa12c4fbb726238a6d06bad037b64ebbdaecfa90fd445f
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Run ShellCheck
         run: |
           find . -type f -name "*.sh" -exec shellcheck {} +

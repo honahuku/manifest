@@ -13,9 +13,7 @@ jobs:
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Run Renovate
         run: >
           renovate --platform gitlab \
