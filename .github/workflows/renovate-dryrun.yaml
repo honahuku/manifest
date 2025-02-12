@@ -1,0 +1,42 @@
+name: renovate(dry-run)
+
+on:
+  pull_request:
+    paths:
+      - '.github/renovate.json'
+      - '.github/workflows/renovate*.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    container:
+      image: renovate/renovate
+    steps:
+      - name: Validate Renovate Config
+        run: |
+          set -eux
+          renovate-config-validator --strict
+    if: github.event_name == 'pull_request'
+
+  dry-run-full:
+    runs-on: ubuntu-latest
+    container:
+      image: renovate/renovate
+    env:
+      RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+    steps:
+      - name: Dry Run Full
+        run: .github/renovate-dryrun.sh full ci
+    if: github.event_name == 'pull_request'
+
+  dry-run-extract:
+    runs-on: ubuntu-latest
+    container:
+      image: renovate/renovate
+    env:
+      RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+    steps:
+      - name: Dry Run Extract
+        run: .github/renovate-dryrun.sh extract ci
+    if: github.event_name == 'pull_request'
