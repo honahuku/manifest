@@ -19,28 +19,14 @@ fi
 
 set -u
 
-if [[ "$EXEC_ENV" == "ci" ]]; then
-    RENOVATE_BIN="renovate"
-    # https://docs.renovatebot.com/troubleshooting/#log-debug-levels
-    # https://docs.renovatebot.com/self-hosted-configuration/#dryrun
-    script -q -e -c "LOG_LEVEL='DEBUG' \
-        RENOVATE_BASE_BRANCHES=$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME \
-        $RENOVATE_BIN \
-        --platform github \
-        --dry-run=$DRYRUN_MODE \
-        --schedule="" \
-        --allow-command-templating true \
-        " /dev/null 2>&1 | tee output.log
-else
-    RENOVATE_BIN="npx --yes --package renovate -- renovate"
-    script -q -e -c "LOG_LEVEL='DEBUG' \
-        RENOVATE_CONFIG_FILE='.gitlab/renovate.json' \
-        $RENOVATE_BIN \
-        --platform github \
-        --dry-run=$DRYRUN_MODE \
-        --schedule="" \
-        " /dev/null 2>&1 | tee output.log
-fi
+RENOVATE_BIN="npx --yes --package renovate -- renovate"
+script -q -e -c "LOG_LEVEL='DEBUG' \
+    RENOVATE_CONFIG_FILE='.gitlab/renovate.json' \
+    $RENOVATE_BIN \
+    --platform github \
+    --dry-run=$DRYRUN_MODE \
+    --schedule="" \
+    " /dev/null 2>&1 | tee output.log
 
 if echo "$(<output.log)" | grep -q "Configuration Error"; then
     echo "Configuration Error detected" 1>&2

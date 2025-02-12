@@ -10,10 +10,10 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/renovatebot/renovate:39.168
     steps:
       - uses: actions/checkout@v4
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v41.0.12
       - name: Validate Renovate Config
         run: |
           set -eux
@@ -26,10 +26,11 @@ jobs:
       image: ghcr.io/renovatebot/renovate:39.168
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+      RENOVATE_DRY_RUN: full
     steps:
       - uses: actions/checkout@v4
-      - name: Dry Run Full
-        run: .github/renovate-dryrun.sh full ci
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v41.0.12
     if: github.event_name == 'pull_request'
 
   extract:
@@ -38,8 +39,9 @@ jobs:
       image: ghcr.io/renovatebot/renovate:39.168
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+      RENOVATE_DRY_RUN: extract
     steps:
       - uses: actions/checkout@v4
-      - name: Dry Run Extract
-        run: .github/renovate-dryrun.sh extract ci
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v41.0.12
     if: github.event_name == 'pull_request'
