@@ -13,6 +13,9 @@ jobs:
     container:
       image: renovate/renovate
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Validate Renovate Config
         run: |
           set -eux
@@ -26,8 +29,11 @@ jobs:
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Dry Run Full
-        run: bash .github/renovate-dryrun.sh full ci
+        run: .github/renovate-dryrun.sh full ci
     if: github.event_name == 'pull_request'
 
   extract:
@@ -37,6 +43,9 @@ jobs:
     env:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Dry Run Extract
-        run: bash .github/renovate-dryrun.sh extract ci
+        run: .github/renovate-dryrun.sh extract ci
     if: github.event_name == 'pull_request'
