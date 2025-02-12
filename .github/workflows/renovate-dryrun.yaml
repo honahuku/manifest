@@ -24,6 +24,8 @@ jobs:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: full
       LOG_LEVEL: DEBUG
+      RENOVATE_AUTODISCOVER: true
+      RENOVATE_AUTODISCOVER_FILTER: "/honahuku/{manifest,infra}"
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
@@ -36,6 +38,8 @@ jobs:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: extract
       LOG_LEVEL: DEBUG
+      RENOVATE_AUTODISCOVER: true
+      RENOVATE_AUTODISCOVER_FILTER: "/honahuku/{manifest,infra}"
     steps:
       - uses: actions/checkout@v4
       - name: Self-hosted Renovate
