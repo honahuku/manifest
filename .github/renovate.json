@@ -1,7 +1,61 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "group:all",
-    "github>aquaproj/aqua-renovate-config#2.6.0"
-  ]
+    "config:recommended",
+    ":maintainLockFilesMonthly",
+    ":label(dependencies)",
+    "github>aquaproj/aqua-renovate-config#2.6.0",
+    "customManagers:dockerfileVersions"
+  ],
+  "platformAutomerge": true,
+  "dependencyDashboard": false,
+  "packageRules": [
+    {
+      "description": "minor と patch の aqua の更新はまとめて automerge する",
+      "matchPackageNames": ["/aquaproj\/aqua(-installer)?/"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "groupName": "aqua",
+      "addLabels": ["aqua", "automerge"],
+      "automerge": true
+    },
+    {
+      "description": "argocd と argowf は automerge せず手で stg デプロイして挙動を確認する",
+      "matchPackageNames": ["/argoproj\/argo(?:-cd|-workflows)?/"],
+      "automerge": false
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["applications\/base\/.*.yaml"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s+?repoURL[ :]\"? '(?<registryUrl>[^\\s]+?)'\\s+?targetRevision[ :]\"? (?<currentValue>.+?)\"?\\s"
+      ]
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["argocd/.*/kustomization\\.ya?ml$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))\\s+?.+raw.githubusercontent.com\/argoproj\/argo-cd[/](?<currentValue>.+?)\/"
+      ]
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["argo-workflow/.*/kustomization\\.ya?ml$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))\\s+?.+github.com\/argoproj\/argo-workflows\/releases\/download[/](?<currentValue>.+?)\/"
+      ]
+    }
+  ],
+  "major": {
+    "minimumReleaseAge": "7 days"
+  },
+  "minor": {
+    "minimumReleaseAge": "3 days"
+  },
+  "patch": {
+    "minimumReleaseAge": "2 days",
+    "automerge": true
+  }
 }
