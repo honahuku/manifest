@@ -24,7 +24,6 @@ jobs:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: full
       LOG_LEVEL: DEBUG
-      RENOVATE_ENDPOINT: ${{ github.server_url}}${{github.action_repository}}
       RENOVATE_BASE_BRANCHES: ${{ github.head_ref }}
       RENOVATE_CONFIG_FILE: '.github/renovate.json'
     steps:
@@ -39,7 +38,6 @@ jobs:
       RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       RENOVATE_DRY_RUN: extract
       LOG_LEVEL: DEBUG
-      RENOVATE_ENDPOINT: ${{ github.server_url}}${{github.action_repository}}
       RENOVATE_BASE_BRANCHES: ${{ github.head_ref }}
       RENOVATE_CONFIG_FILE: '.github/renovate.json'
     steps:
