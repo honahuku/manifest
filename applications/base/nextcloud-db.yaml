@@ -5,13 +5,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: v16.7.20
+    # bitnami は OCI 形式に変更されたらしい https://github.com/helm/helm/issues/13466
+    # argocd で repourl を書くときは OCI: を付けなくていい https://argo-cd.readthedocs.io/en/stable/user-guide/helm/#declarative
+    repoURL: registry-1.docker.io/bitnamicharts
+    targetRevision: 16.7.20
     chart: postgresql
-    # helm:
-    #   valuesObject:
-    #     global:
-    #       imageRegistry: mirror.gcr.io
+    helm:
+      valuesObject:
   destination:
     server: https://kubernetes.default.svc
     namespace: nextcloud
