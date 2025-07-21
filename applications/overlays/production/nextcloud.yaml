@@ -23,6 +23,7 @@ spec:
         externalDatabase:
           type: postgresql
           host: nextcloud-db
+          user: postgres
           existingSecret:
             enabled: true
             secretName: nextcloud-db-postgresql
