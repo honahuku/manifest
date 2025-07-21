@@ -9,20 +9,17 @@ spec:
     targetRevision: v1.8.0
     chart: longhorn
     helm:
-      # シングルノード向け設定
-      # https://github.com/longhorn/longhorn/discussions/5737
-      # persistence.defaultClassReplicaCount
-      # 3台以下で構成されてるクラスタなら2でいいんじゃん？とのこと
-      # https://longhorn.io/docs/archives/1.4.1/references/settings/#default-replica-count
-      # defaultSettings.replicaSoftAntiAffinity
-      # 多分 node 単位で replica が分かれる設定を無効化するという話だと思う
-      # https://longhorn.io/docs/archives/1.4.1/references/settings/#replica-node-level-soft-anti-affinity
-      values: |
+      valuesObject:
         preUpgradeChecker:
           jobEnabled: false
         persistence:
-          defaultClassReplicaCount: 2
+          # シングルノード向け設定
+          # https://github.com/longhorn/longhorn/discussions/5737
+          # https://longhorn.io/docs/archives/1.4.1/references/settings/#default-replica-count
+          defaultClassReplicaCount: 1
         defaultSettings:
+          # node 単位で replica が分かれる設定を無効化する(多分そう)
+          # https://longhorn.io/docs/archives/1.4.1/references/settings/#replica-node-level-soft-anti-affinity
           replicaSoftAntiAffinity: true
   destination:
     server: https://kubernetes.default.svc
