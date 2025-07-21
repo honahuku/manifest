@@ -33,6 +33,8 @@ replacements:
           - kind: Application
             name: longhorn
           - kind: Application
+            name: cilium
+          - kind: Application
             name: nextcloud
           - kind: Application
             name: mariadb
