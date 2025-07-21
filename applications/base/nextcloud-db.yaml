@@ -1,16 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mariadb
+  name: nextcloud-db
 spec:
   project: default
   source:
     repoURL: https://charts.bitnami.com/bitnami
-    chart: mariadb
-    targetRevision: 20.2.2
+    targetRevision: 16.7.20
+    chart: nextcloud-db
+    helm:
+      valuesObject:
+        global:
+          imageRegistry: mirror.gcr.io
   destination:
     server: https://kubernetes.default.svc
-    namespace: mariadb
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
+    namespace: nextcloud

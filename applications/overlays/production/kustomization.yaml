@@ -11,6 +11,7 @@ patches:
   - path: cilium.yaml
   - path: cloudflared.yaml
   - path: longhorn.yaml
+  - path: nextcloud-db.yaml
   - path: nextcloud.yaml
 
 labels:
@@ -35,9 +36,9 @@ replacements:
           - kind: Application
             name: cilium
           - kind: Application
-            name: nextcloud
+            name: nextcloud-db
           - kind: Application
-            name: mariadb
+            name: nextcloud
         fieldPaths:
           - spec.source.path
         # delimiter と index で applications/overlays/$(ENV) みたいなときの / で区切られた3つ目を指定

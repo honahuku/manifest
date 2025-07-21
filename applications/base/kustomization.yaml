@@ -10,5 +10,5 @@ resources:
   - cilium.yaml
   - cloudflared.yaml
   - longhorn.yaml
-  - mariadb.yaml
+  - nextcloud-db.yaml
   - nextcloud.yaml
