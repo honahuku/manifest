@@ -6,12 +6,15 @@ spec:
   project: default
   source:
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 16.7.20
+    targetRevision: v16.7.20
     chart: postgresql
-    helm:
-      valuesObject:
-        global:
-          imageRegistry: mirror.gcr.io
+    # helm:
+    #   valuesObject:
+    #     global:
+    #       imageRegistry: mirror.gcr.io
   destination:
     server: https://kubernetes.default.svc
     namespace: nextcloud
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
