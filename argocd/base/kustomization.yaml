@@ -9,7 +9,6 @@ resources:
   - namespace.yaml
 
 patches:
-  - path: argocd-repo-server.yaml
   - path: argocd-server.yaml
 
 configMapGenerator:
