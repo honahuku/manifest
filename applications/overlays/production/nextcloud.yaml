@@ -6,14 +6,27 @@ spec:
   source:
     helm:
       valuesObject:
+        replicaCount: 2
         nextcloud:
           host: nextcloud.honahuku.dev
         persistence:
           enabled: true
         metrics:
-          https: true
-        phpClientHttpsFix:
-          enabled: true
+          https: false
+        # phpClientHttpsFix:
+        #   enabled: false
+        service:
+          type: NodePort
+          nodePort: 30000
+        internalDatabase:
+          enabled: false
+        externalDatabase:
+          type: postgresql
+          host: nextcloud-db
+          existingSecret:
+            enabled: true
+            secretName: nextcloud-db-postgresql
+            passwordKey: postgres-password
   syncPolicy:
     automated:
       prune: true
