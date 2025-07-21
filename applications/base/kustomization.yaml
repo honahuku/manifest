@@ -7,6 +7,7 @@ namespace: argocd
 resources:
   - applications.yaml
   - argocd.yaml
+  - cilium.yaml
   - cloudflared.yaml
   - longhorn.yaml
   - mariadb.yaml

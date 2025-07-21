@@ -8,6 +8,7 @@ resources:
 patches:
   - path: applications.yaml
   - path: argocd.yaml
+  - path: cilium.yaml
   - path: cloudflared.yaml
   - path: longhorn.yaml
   - path: nextcloud.yaml
