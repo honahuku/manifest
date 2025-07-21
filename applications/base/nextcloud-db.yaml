@@ -12,6 +12,8 @@ spec:
     chart: postgresql
     helm:
       valuesObject:
+        auth:
+          existingSecret: nextcloud-db
   destination:
     server: https://kubernetes.default.svc
     namespace: nextcloud

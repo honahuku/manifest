@@ -4,13 +4,38 @@ metadata:
   name: nextcloud
 spec:
   project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nextcloud
   source:
     repoURL: https://nextcloud.github.io/helm/
     chart: nextcloud
     targetRevision: 6.6.3
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: nextcloud
+    helm:
+      valuesObject:
+        replicaCount: 2
+        nextcloud:
+          host: nextcloud.honahuku.dev
+        persistence:
+          enabled: true
+        metrics:
+          https: false
+        # phpClientHttpsFix:
+        #   enabled: false
+        service:
+          type: NodePort
+          nodePort: 30000
+        internalDatabase:
+          enabled: false
+        externalDatabase:
+          type: postgresql
+          host: nextcloud-db
+          user: postgres
+          existingSecret:
+            enabled: true
+            secretName: nextcloud-db
+            usernameKey: postgres-user
+            passwordKey: postgres-password
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
