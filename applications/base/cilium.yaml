@@ -10,6 +10,10 @@ spec:
     chart: cilium
     helm:
       valuesObject:
+        operator:
+          # FIXME: node が増えたら operator の replicas を増やす
+          # https://docs.cilium.io/en/stable/helm-reference/
+          replicas: 1
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
