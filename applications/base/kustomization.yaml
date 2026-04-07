@@ -8,7 +8,6 @@ resources:
   - applications.yaml
   - argocd.yaml
   - cilium.yaml
-  - cloudflared.yaml
   - longhorn.yaml
   - nextcloud-db.yaml
   - nextcloud.yaml
