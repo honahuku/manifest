@@ -8,6 +8,7 @@ resources:
   - applications.yaml
   - argocd.yaml
   - cilium.yaml
+  - kubevirt.yaml
   - longhorn.yaml
   - nextcloud-db.yaml
   - nextcloud.yaml
